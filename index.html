@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Летняя стоянка на 120 мужчин</title>
+    <title>Летняя стоянка на 120-х мужчин v3</title>
     <style>
         @page {
             size: A4 portrait;
@@ -14,7 +14,7 @@
                 color: #64748b;
             }
             @bottom-left {
-                content: "Шифр: ПГ-120М/ЛЕТО-ВК | Расчёт для 120 мужчин (стоянка >14 сут, баня 1 раз/нед)";
+                content: "Шифр: ПГ-120М/МО-ЛЕТО-ВК-v3 | Расчёт на 48 часов (>14 суток, баня 1 раз/нед, без туалетов)";
                 font-family: 'Segoe UI', Roboto, Arial, sans-serif;
                 font-size: 7.5pt;
                 color: #64748b;
@@ -113,7 +113,7 @@
 
         .kpi-card.bath { border-top-color: #7c3aed; }
         .kpi-card.sewage { border-top-color: #d97706; }
-        .kpi-card.longterm { border-top-color: #059669; }
+        .kpi-card.pump { border-top-color: #059669; }
 
         .kpi-title {
             font-size: 7pt;
@@ -274,426 +274,389 @@
 
     <div class="doc-header">
         <div class="doc-meta">
-            <span>Уточнённый инженерный расчёт ВК, СЭБ и ПБ (Редакция № 2)</span>
-            <span>Актуализация норм РФ: 2026 г.</span>
+            <span>Инженерный расчёт ВК, СЭБ и ПБ (Версия v3)</span>
+            <span>Московская область | Актуализация норм РФ: 2026 г.</span>
         </div>
-        <h1>ИНЖЕНЕРНЫЙ РАСЧЁТ ВОДОСНАБЖЕНИЯ, ВОДООТВЕДЕНИЯ И БЕЗОПАСНОСТИ ВРЕМЕННОГО ПАЛАТОЧНОГО ГОРОДКА НА 120 МУЖЧИН</h1>
-        <p class="doc-subtitle">Расчётное окно: 48 часов (2 суток) в рамках длительной летней эксплуатации (&gt; 14 суток) при единой воде питьевого качества и помывке в полевой бане 1 раз в неделю</p>
+        <h1>ИНЖЕНЕРНЫЙ РАСЧЁТ СИСТЕМ ВОДОСНАБЖЕНИЯ, ВОДООТВЕДЕНИЯ И МОЩНОСТИ НАСОСНОЙ СТАНЦИИ</h1>
+        <p class="doc-subtitle">Временный палаточный городок на 120 мужчин (лето, стоянка &gt; 14 суток, обновляемый запас на 48 часов, кухня на 13 блюд/чел., групповой душ 12×7 м, умывальник 12×7 м, насосная станция 12×7 м, без туалета)</p>
     </div>
 
     <div class="spec-banner">
         <div>
-            <span>Контингент:</span>
-            <strong>120 чел. (100% Мужчины)</strong>
+            <span>Контингент и локация:</span>
+            <strong>120 мужчин (МО, лето)</strong>
         </div>
         <div>
-            <span>Сезон и климат:</span>
-            <strong>Лето (+22...+30 °C)</strong>
+            <span>Период автономии:</span>
+            <strong>48 часов (раз в 2 суток)</strong>
         </div>
         <div>
-            <span>Режим полевой бани:</span>
-            <strong>1 раз в неделю (7 сут)</strong>
+            <span>Полевая кухня:</span>
+            <strong>13 блюд/чел. (1560 блюд/сут)</strong>
         </div>
         <div>
-            <span>Длительность лагеря:</span>
-            <strong>&gt; 14 суток (цикличная)</strong>
+            <span>Баня и Умывальник:</span>
+            <strong>2 объекта 12×7 м (по 84 м²)</strong>
         </div>
         <div>
-            <span>Качество воды в сети:</span>
-            <strong>100% Питьевая (СанПиН)</strong>
+            <span>Насосная станция:</span>
+            <strong>Павильон 12×7 м (84 м²)</strong>
         </div>
     </div>
 
     <div class="kpi-grid">
         <div class="kpi-card">
-            <div class="kpi-title">Расход за 48 ч (Рядовые сутки)</div>
-            <div class="kpi-value">11,20 м³</div>
-            <div class="kpi-sub">Суточный без бани: <strong>5,60 м³/сут</strong><br>При сменной бане (17 чел./сут): <strong>12,32 м³</strong></div>
+            <div class="kpi-title">Расход за 48 ч (Рядовые сут.)</div>
+            <div class="kpi-value">12,28 м³</div>
+            <div class="kpi-sub">Суточный без бани: <strong>6,14 м³/сут</strong><br>При сменной бане (17 чел./сут): <strong>13,48 м³</strong></div>
         </div>
         <div class="kpi-card bath">
-            <div class="kpi-title">Расход за 48 ч (С банным днём)</div>
-            <div class="kpi-value">14,95 м³</div>
-            <div class="kpi-sub">Пик в банный день (120 чел.): <strong>9,35 м³/сут</strong><br>С резервом 20%: <strong>17,94 м³</strong> (полезн.)</div>
+            <div class="kpi-title">Расход за 48 ч (Банный день)</div>
+            <div class="kpi-value">16,68 м³</div>
+            <div class="kpi-sub">Суточный пик (120 чел.): <strong>10,54 м³/сут</strong><br>С резервом +20%: <strong>20,02 м³</strong> (полезн.)</div>
         </div>
         <div class="kpi-card sewage">
             <div class="kpi-title">Объём стоков ЖБО за 48 ч</div>
-            <div class="kpi-value">10,16–13,78 м³</div>
-            <div class="kpi-sub">Рядовые 48 ч: <strong>10,16 м³</strong> (расч. 11,18 м³)<br>С банным днём: <strong>13,78 м³</strong> (расч. 15,16 м³)</div>
+            <div class="kpi-value">10,95–14,97 м³</div>
+            <div class="kpi-sub">Рядовые 48 ч (расч.): <strong>12,05 м³</strong><br>С банным днём (расч.): <strong>16,47 м³</strong></div>
         </div>
-        <div class="kpi-card longterm">
-            <div class="kpi-title">Расход за 14 суток (2 недели)</div>
-            <div class="kpi-value">85,90 м³</div>
-            <div class="kpi-sub">Стоки за 14 суток: <strong>78,40 м³</strong> (теор.)<br>Оптимум ёмкостей: <strong>15 м³ ХВС + 15 м³ ЖБО</strong></div>
+        <div class="kpi-card pump">
+            <div class="kpi-title">Параметры насосной станции</div>
+            <div class="kpi-value">10,0 м³/ч / 32 м</div>
+            <div class="kpi-sub">Пиковый секундный: <strong>2,78 л/с</strong><br>Двигатель: <strong>2,2 кВт</strong> (раб. + рез.)</div>
         </div>
     </div>
 
-    <h2>Раздел А. Инженерный вывод с учётом уточнённых исходных данных</h2>
-    <p>Переход на <strong>100% мужской состав</strong> снижает расход воды на смыв туалета на <strong>42,8%</strong> (с 5,04 до 2,88 м³ за 48 ч за счёт полного задействования 12 писсуаров по 1,5 л/смыв). Режим <strong>помывки в бане 1 раз в неделю</strong> при летней эксплуатации смещает гигиеническую нагрузку на отдельный полевой умывальник (ежедневное обмывание по пояс, мытьё ног, бритьё — <strong>12,0 л/(чел.·сут)</strong>) и увеличивает летнее питьё до <strong>3,5 л/(чел.·сут)</strong>. Поскольку лагерь стоит <strong>более 14 суток</strong>, подбор ёмкостей и логистики обязан выдерживать пиковое двухсуточное окно, на которое выпадает еженедельный банный день.</p>
+    <h2>Раздел А. Краткий инженерный вывод по новым условиям (v3)</h2>
+    <p>Исключение туалета из расчёта полностью сняло фекальные («чёрные») стоки. При этом увеличение нагрузки полевой кухни до <strong>13 блюд в сутки на человека</strong> (1560 условных блюд/сут) увеличило технологическое кухонное водопотребление до <strong>4,05 м³/сут (8,10 м³ за 48 ч)</strong>. Поскольку лагерь эксплуатируется свыше 14 суток в Московской области, ёмкостный парк и насосное оборудование рассчитываются на пропуск максимального двухсуточного пика, включающего еженедельный банный день.</p>
 
     <table>
         <thead>
             <tr>
-                <th style="width: 31%;">Наименование показателя</th>
+                <th style="width: 32%;">Наименование показателя</th>
                 <th style="width: 17%;" class="center">Режим 1: Рядовые 48 ч<br><small>(без работы бани)</small></th>
-                <th style="width: 18%;" class="center">Режим 2: Сменная баня<br><small>(по 17–18 чел./сут)</small></th>
-                <th style="width: 18%;" class="center">Режим 3: 48 ч с банным днём<br><small>(1 сут рядовые + 1 сут баня 120 чел.)</small></th>
+                <th style="width: 17%;" class="center">Режим 2: Сменная баня<br><small>(по 17–18 чел./сут)</small></th>
+                <th style="width: 18%;" class="center">Режим 3: 48 ч с банным днём<br><small>(1 сут без бани + 1 сут баня 120 чел.)</small></th>
                 <th style="width: 16%;" class="center">Статус значения</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>1. Расход питьевой воды за сутки (24 ч)</strong></td>
-                <td class="num">5,60 м³/сут</td>
-                <td class="num">6,16 м³/сут</td>
-                <td class="num"><strong>9,35 м³/сут</strong> (в день бани)</td>
+                <td><strong>1. Суточный расход чистой питьевой воды</strong></td>
+                <td class="num">6,14 м³/сут</td>
+                <td class="num">6,74 м³/сут</td>
+                <td class="num"><strong>10,54 м³/сут</strong> (в день бани)</td>
                 <td class="center"><span class="badge badge-calc">Расчётное</span></td>
             </tr>
             <tr>
-                <td><strong>2. Общий расход воды за 48 часов (2 суток)</strong></td>
-                <td class="num"><strong>11,20 м³</strong></td>
-                <td class="num"><strong>12,32 м³</strong></td>
-                <td class="num"><strong>14,95 м³</strong></td>
+                <td><strong>2. Общий расход чистой воды за 48 часов</strong></td>
+                <td class="num"><strong>12,28 м³</strong></td>
+                <td class="num"><strong>13,48 м³</strong></td>
+                <td class="num"><strong>16,68 м³</strong></td>
                 <td class="center"><span class="badge badge-calc">Расчётное</span></td>
             </tr>
             <tr>
-                <td><strong>3. Полезный объём воды на 48 ч (с резервом +20%)</strong></td>
-                <td class="num">13,44 м³</td>
-                <td class="num">14,78 м³</td>
-                <td class="num"><strong>17,94 м³</strong></td>
+                <td><strong>3. Необходимый полезный объём на 48 ч (+20% резерв)</strong></td>
+                <td class="num">14,74 м³</td>
+                <td class="num">16,18 м³</td>
+                <td class="num"><strong>20,02 м³</strong></td>
                 <td class="center"><span class="badge badge-calc">Расчётное</span></td>
             </tr>
             <tr>
-                <td><strong>4. Рекомендуемый номинальный объём ёмкости ХВС (η=0,85)</strong></td>
-                <td class="num">16,0 м³ (автономно)<br>10,0 м³ (пополнение)</td>
-                <td class="num">18,0 м³ (автономно)<br>10,0 м³ (пополнение)</td>
-                <td class="num"><strong>20,0–22,0 м³</strong> (на 48 ч)<br><strong>15,0 м³</strong> (при подвозе)</td>
+                <td><strong>4. Рекомендуемый номинальный объём баков чистой воды (η=0,85)</strong></td>
+                <td class="num">18,0 м³</td>
+                <td class="num">20,0 м³</td>
+                <td class="num"><strong>24,0–25,0 м³</strong> (кассета 5×5 м³)</td>
                 <td class="center"><span class="badge badge-rec">Рекомендация</span></td>
             </tr>
             <tr>
                 <td><strong>5. Теоретический объём стоков за 48 часов (W<sub>ст.теор</sub>)</strong></td>
-                <td class="num"><strong>10,16 м³</strong> (5,08 м³/сут)</td>
-                <td class="num"><strong>11,24 м³</strong> (5,62 м³/сут)</td>
-                <td class="num"><strong>13,78 м³</strong> (в день бани 8,70 м³)</td>
+                <td class="num"><strong>10,95 м³</strong> (5,48 м³/сут)</td>
+                <td class="num"><strong>12,05 м³</strong> (6,02 м³/сут)</td>
+                <td class="num"><strong>14,97 м³</strong> (в день бани 9,50 м³)</td>
                 <td class="center"><span class="badge badge-calc">Расчётное</span></td>
             </tr>
             <tr>
                 <td><strong>6. Расчётный объём стоков с запасом K=1,10 (W<sub>ст.расч</sub>)</strong></td>
-                <td class="num">11,18 м³</td>
-                <td class="num">12,36 м³</td>
-                <td class="num"><strong>15,16 м³</strong></td>
+                <td class="num">12,05 м³</td>
+                <td class="num">13,25 м³</td>
+                <td class="num"><strong>16,47 м³</strong></td>
                 <td class="center"><span class="badge badge-calc">Расчётное</span></td>
             </tr>
             <tr>
-                <td><strong>7. Рекомендуемый номинальный объём ёмкости стоков (η=0,80)</strong></td>
-                <td class="num">14,0–15,0 м³</td>
-                <td class="num">15,0–16,0 м³</td>
-                <td class="num"><strong>19,0–20,0 м³</strong> (на 48 ч)<br><strong>12,0–15,0 м³</strong> (вывоз/сут)</td>
+                <td><strong>7. Рекомендуемый номинал ёмкости стоков ЖБО (η=0,80)</strong></td>
+                <td class="num">15,0 м³</td>
+                <td class="num">16,0–18,0 м³</td>
+                <td class="num"><strong>20,0–22,0 м³</strong> (откачка раз в 48 ч)</td>
                 <td class="center"><span class="badge badge-rec">Рекомендация</span></td>
             </tr>
             <tr>
-                <td><strong>8. Число рейсов водовоза АЦПТ-6,0 (полезн. 5,8 м³) за 48 ч</strong></td>
-                <td class="num">2–3 рейса</td>
+                <td><strong>8. Число рейсов водовоза АЦПТ-6,0 (5,8 м³) за 48 часов</strong></td>
                 <td class="num">3 рейса</td>
-                <td class="num"><strong>3–4 рейса</strong> (16 рейсов/14 сут)</td>
+                <td class="num">3 рейса</td>
+                <td class="num"><strong>3–4 рейса</strong></td>
                 <td class="center"><span class="badge badge-assump">Допущение</span></td>
             </tr>
             <tr>
-                <td><strong>9. Число рейсов ассенизатора КАМАЗ (9,0 м³) / ГАЗ (3,5 м³) за 48 ч</strong></td>
-                <td class="num">2 рейса / 4 рейса</td>
-                <td class="num">2 рейса / 4 рейса</td>
-                <td class="num"><strong>2 рейса / 5 рейсов</strong></td>
+                <td><strong>9. Число рейсов ассенизатора КАМАЗ (9,0 м³) за 48 часов</strong></td>
+                <td class="num">1–2 рейса</td>
+                <td class="num">2 рейса</td>
+                <td class="num"><strong>2 рейса</strong> (или 4–5 рейсов ГАЗ)</td>
                 <td class="center"><span class="badge badge-assump">Допущение</span></td>
+            </tr>
+            <tr>
+                <td><strong>10. Пиковая подача и напор насосной станции</strong></td>
+                <td class="num">Q = 6,5 м³/ч, H = 30 м</td>
+                <td class="num">Q = 7,5 м³/ч, H = 32 м</td>
+                <td class="num"><strong>Q = 10,0 м³/ч, H = 32 м</strong></td>
+                <td class="center"><span class="badge badge-norm">Расчётное (СП 30)</span></td>
             </tr>
         </tbody>
     </table>
 
-    <h2>Раздел Б. Таблица водопотребления (120 мужчин, лето, баня 1 раз в неделю)</h2>
-    <p>В таблице представлен покомпонентный расчёт по формуле <strong>Q = q × N × n × 10<sup>−3</sup></strong> для рядовых летних суток (без бани), банного дня (помывка 120 чел.) и двух вариантов 48-часового окна. Так как стоянка длится более 2 недель, на первое заполнение трубопроводов (0,15 м³) не делается поправка в каждые 48 часов — вместо этого учтён постоянный технологический расход на промывку фильтров и подпитку сети (0,05 м³/сут).</p>
+    <h2>Раздел Б. Детальный расчёт водопотребления городка (без туалета, v3)</h2>
+    <p>Расчёт выполнен по направлениям с учётом повышенной технологической нагрузки кухни (13 блюд/чел. в день = 1560 блюд/сут). Полевой умывальник размещён на площадке $12 \times 7\text{ м}$ (24 водоразборных крана). Групповой душ полевой бани расположен в павильоне $12 \times 7\text{ м}$ (12 душевых сеток, помывка сменами по 15 мин).</p>
 
     <table>
         <thead>
             <tr>
-                <th style="width: 24%;">Направление расхода питьевой воды</th>
-                <th style="width: 13%;" class="center">Удельный расход (q)</th>
-                <th style="width: 19%;">Потребители (N=120 М) и число операций в сутки (n)</th>
-                <th style="width: 9%;" class="num">Рядовые сутки, м³</th>
+                <th style="width: 25%;">Источник водопотребления</th>
+                <th style="width: 14%;" class="center">Удельный расход (q)</th>
+                <th style="width: 18%;">Потребители (120 М) и частота операций</th>
+                <th style="width: 9%;" class="num">Рядовые сут., м³</th>
                 <th style="width: 9%;" class="num">За 48 ч (без бани), м³</th>
-                <th style="width: 9%;" class="num">За 48 ч (с баней*), м³</th>
-                <th style="width: 17%;">Обоснование (нормы РФ)</th>
+                <th style="width: 9%;" class="num">За 48 ч (с баней), м³</th>
+                <th style="width: 16%;">Обоснование норматива</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>1. Питьё (летний питьевой режим мужчин)</strong></td>
+                <td><strong>1. Питьевой режим (лето, МО)</strong></td>
                 <td class="center">3,5 л/(чел.·сут)</td>
-                <td>N = 120 М, n = 1 сут (повышенное потоотделение летом)</td>
+                <td>N = 120 мужчин, n = 1 сут</td>
                 <td class="num">0,420</td>
                 <td class="num">0,840</td>
                 <td class="num">0,840</td>
-                <td>МР 2.3.1.0253-21, нормы охраны труда летом (+25...+30 °C).</td>
+                <td>МР 2.3.1.0253-21, нормы охраны труда летом</td>
             </tr>
             <tr>
                 <td><strong>2а. Кухня: вода в составе блюд и напитков</strong></td>
-                <td class="center">2,5 л/(чел.·сут)</td>
-                <td>N = 120 М, n = 1 сут (3-разовое питание, 840 блюд/сут)</td>
-                <td class="num">0,300</td>
-                <td class="num">0,600</td>
-                <td class="num">0,600</td>
-                <td>СП 30.13330.2020 (Табл. А.2), раскладки котлового питания.</td>
+                <td class="center">0,35 л на 1 блюдо</td>
+                <td>1560 блюд/сут (120 чел. × 13 блюд)</td>
+                <td class="num">0,546</td>
+                <td class="num">1,092</td>
+                <td class="num">1,092</td>
+                <td>Раскладки первых, вторых блюд и чая КП-130</td>
             </tr>
             <tr>
-                <td><strong>2б. Кухня: мытьё продуктов и кулинария</strong></td>
-                <td class="center">2,5 л/(чел.·сут)</td>
-                <td>N = 120 М, n = 1 сут</td>
-                <td class="num">0,300</td>
-                <td class="num">0,600</td>
-                <td class="num">0,600</td>
-                <td>СП 30.13330.2020 (декомпозиция нормы общепита).</td>
+                <td><strong>2б. Кухня: мытьё сырья и кулинария</strong></td>
+                <td class="center">0,40 л на 1 блюдо</td>
+                <td>1560 блюд/сут (промывка круп, мяса, овощей)</td>
+                <td class="num">0,624</td>
+                <td class="num">1,248</td>
+                <td class="num">1,248</td>
+                <td>СП 30.13330.2020 (п. 14 Табл. А.2)</td>
             </tr>
             <tr>
-                <td><strong>3а. Кухня: мытьё столовой посуды</strong></td>
-                <td class="center">4,0 л/(чел.·приём)</td>
-                <td>N = 120 М, n = 3 приёма/сут (360 комплектов/сут)</td>
-                <td class="num">1,440</td>
-                <td class="num">2,880</td>
-                <td class="num">2,880</td>
-                <td>СанПиН 2.3/2.4.3590-20 (мойка в 2–3-секц. ваннах).</td>
+                <td><strong>3а. Кухня: мытьё столовой посуды (13 приборов)</strong></td>
+                <td class="center">1,50 л на 1 блюдо</td>
+                <td>1560 комплектов посуды в сутки (в 3-секц. ваннах)</td>
+                <td class="num">2,340</td>
+                <td class="num">4,680</td>
+                <td class="num">4,680</td>
+                <td>СанПиН 2.3/2.4.3590-20 (мойка и ошпаривание 65 °C)</td>
             </tr>
             <tr>
-                <td><strong>3б. Кухня: мытьё котлов КП-130 и инвентаря</strong></td>
-                <td class="center">120,0 л/цикл</td>
-                <td>N = 1 кухня, n = 3 цикла/сут после завтрака, обеда, ужина</td>
-                <td class="num">0,360</td>
-                <td class="num">0,720</td>
-                <td class="num">0,720</td>
-                <td>Регламент эксплуатации полевых кухонь КП-125/130.</td>
+                <td><strong>3б. Кухня: мойка варочных котлов КП-130</strong></td>
+                <td class="center">180,0 л/цикл</td>
+                <td>1 кухня (4 котла) × 3 мойки/сут (после завтр, об, уж)</td>
+                <td class="num">0,540</td>
+                <td class="num">1,080</td>
+                <td class="num">1,080</td>
+                <td>Эксплуатационный регламент кухонь КП-130</td>
             </tr>
             <tr>
-                <td><strong>4а. Туалет: смыв унитазов (100% Мужчины)</strong></td>
-                <td class="center">6,0 л/смыв</td>
-                <td>N = 120 М, n = 1 раз/сут (только дефекация = 120 смывов)</td>
-                <td class="num">0,720</td>
-                <td class="num">1,440</td>
-                <td class="num">1,440</td>
-                <td>ГОСТ 21485-2016 (бачок 6 л). Мочеиспускание — в писсуары.</td>
-            </tr>
-            <tr>
-                <td><strong>4б. Туалет: смыв писсуаров (100% Мужчины)</strong></td>
-                <td class="center">1,5 л/смыв</td>
-                <td>N = 120 М, n = 4 раза/сут (480 смывов писсуаров/сут)</td>
-                <td class="num">0,720</td>
-                <td class="num">1,440</td>
-                <td class="num">1,440</td>
-                <td>СП 30.13330.2020 (Табл. А.1, импульсный кран 1,5 л).</td>
-            </tr>
-            <tr>
-                <td><strong>4в. Туалет: мытьё рук в раковинах (4 шт.)</strong></td>
-                <td class="center">0,8 л/мытьё</td>
-                <td>N = 120 М, n = 5 посещений туалета/сут (600 опер./сут)</td>
-                <td class="num">0,480</td>
-                <td class="num">0,960</td>
-                <td class="num">0,960</td>
-                <td>СП 30.13330.2020 (q₀ = 0,10 л/с, время струи 8 с).</td>
-            </tr>
-            <tr>
-                <td><strong>5. Отдельный полевой умывальник (лето, без ежедневной бани)</strong></td>
+                <td><strong>4. Полевой умывальник (площадка 12×7 м, 24 крана)</strong></td>
                 <td class="center">12,0 л/(чел.·сут)</td>
-                <td>N = 120 М: утро/бритьё 3,0 л + руки перед едой 3×1,0 л + вечерний обмыв торса и мытьё ног 6,0 л</td>
+                <td>Утро/бритьё 3 л + еда 3×1 л + вечерний обмыв и ноги 6 л</td>
                 <td class="num">1,440</td>
                 <td class="num">2,880</td>
                 <td class="num">2,880</td>
-                <td>СП 2.4.3648-20 (п. 3.11.4: ежедневное мытьё ног, лица и рук при бане 1 раз в 7 дней).</td>
+                <td>СП 2.4.3648-20 п. 3.11.4 (ежедневный обмыв летом)</td>
             </tr>
             <tr>
-                <td><strong>6а. Уборка модульного туалета</strong></td>
-                <td class="center">50,0 л/уборку</td>
-                <td>N = 1 блок, n = 3 уборки/сут с дезсредствами</td>
-                <td class="num">0,150</td>
-                <td class="num">0,300</td>
-                <td class="num">0,300</td>
-                <td>СанПиН 2.1.3684-21 (содержание общественных туалетов).</td>
-            </tr>
-            <tr>
-                <td><strong>6б. Уборка зоны кухни и промывка фильтров</strong></td>
-                <td class="center">50 л×2 + 50 л</td>
-                <td>Уборка кухни (100 л/сут) + промывка фильтров ХВС (50 л/сут)</td>
-                <td class="num">0,150</td>
-                <td class="num">0,300</td>
-                <td class="num">0,300</td>
-                <td>СанПиН 2.3/2.4.3590-20; эксплуатация насосной станции.</td>
+                <td><strong>5. Санобработка кухни, бани, промывка ХВС</strong></td>
+                <td class="center">230 л/сут рядовые</td>
+                <td>Уборка кухни (150 л) + промывка фильтров станции (80 л)</td>
+                <td class="num">0,230</td>
+                <td class="num">0,460</td>
+                <td class="num">0,460</td>
+                <td>СанПиН 2.3/2.4.3590-20, регламент насосной</td>
             </tr>
             <tr class="row-subtotal">
-                <td><strong>ПОДЫТОГ: Базовая нагрузка без бани</strong></td>
-                <td class="center"><strong>46,67 л/(чел.·сут)</strong></td>
-                <td><strong>Ежедневное потребление в 6 из 7 дней недели</strong></td>
-                <td class="num"><strong>5,600</strong></td>
-                <td class="num"><strong>11,200</strong></td>
-                <td class="num"><strong>11,200</strong></td>
-                <td><strong>Базовый уровень (при сменной бане +1,12 м³ за 48 ч = 12,32 м³)</strong></td>
+                <td><strong>ПОДЫТОГ: Базовое потребление без бани</strong></td>
+                <td class="center"><strong>51,17 л/(чел.·сут)</strong></td>
+                <td><strong>Постоянная нагрузка в 6 из 7 дней недели</strong></td>
+                <td class="num"><strong>6,140</strong></td>
+                <td class="num"><strong>12,280</strong></td>
+                <td class="num"><strong>12,280</strong></td>
+                <td><strong>При сменной бане (+0,60 м³/сут) = 13,48 м³ за 48 ч</strong></td>
             </tr>
             <tr>
-                <td><strong>7а. Полевая баня: помывка людей (1 раз/нед)</strong></td>
-                <td class="center">30,0 л/помывку</td>
-                <td>В банный день: N = 120 М × 1 = 3,60 м³ (или по 17,1 чел./сут)</td>
-                <td class="num">0,000<br><small>(3,60 в банный)</small></td>
+                <td><strong>6а. Групповой душ в бане (12 сеток, 1 раз/нед)</strong></td>
+                <td class="center">35,0 л/помывку</td>
+                <td>В банный день: 120 М × 1 раз (50% ГВС 65 °C / 50% ХВС)</td>
+                <td class="num">0,000<br><small>(4,20 в банный)</small></td>
                 <td class="num">0,000</td>
-                <td class="num"><strong>3,600</strong></td>
-                <td>Помывка 1 раз в 7 дней (лейка 6 л/мин × 5 мин; 50% ГВС 65 °C).</td>
+                <td class="num"><strong>4,200</strong></td>
+                <td>12 сеток по 7 л/мин × 5 мин полива (смесь 40 °C)</td>
             </tr>
             <tr>
-                <td><strong>7б. Полевая баня: уборка и дезинфекция</strong></td>
-                <td class="center">150,0 л/банный день</td>
-                <td>Промывка и дезинфекция трапов и скамей после помывки</td>
-                <td class="num">0,000<br><small>(0,15 в банный)</small></td>
+                <td><strong>6б. Дезинфекция и промывка помывочной бани</strong></td>
+                <td class="center">200,0 л/банный день</td>
+                <td>1 генеральная уборка зала 40 м² после помывки 120 чел.</td>
+                <td class="num">0,000<br><small>(0,20 в банный)</small></td>
                 <td class="num">0,000</td>
-                <td class="num"><strong>0,150</strong></td>
-                <td>СП 2.1.3678-20 (обработка помывочных помещений).</td>
+                <td class="num"><strong>0,200</strong></td>
+                <td>СП 2.1.3678-20 (санобработка душевых)</td>
             </tr>
             <tr class="row-total">
-                <td><strong>ИТОГО МАКСИМАЛЬНЫЕ 48 ЧАСОВ (с баней)</strong></td>
-                <td class="center"><strong>62,29 л/(чел.·сут) ср.</strong></td>
-                <td><strong>1 сутки рядовые (5,60 м³) + 1 сутки банные (9,35 м³)</strong></td>
-                <td class="num"><strong>9,350 (пик)</strong></td>
-                <td class="num"><strong>11,200</strong></td>
-                <td class="num"><strong>14,950</strong></td>
-                <td><strong>За 7 суток (неделю): 42,95 м³ | За 14 суток: 85,90 м³</strong></td>
+                <td><strong>ИТОГО ПО ГОРОДКУ (с банным днём)</strong></td>
+                <td class="center"><strong>69,50 л/(чел.·сут) ср.</strong></td>
+                <td><strong>1 рядовые сутки (6,14 м³) + 1 банные сутки (10,54 м³)</strong></td>
+                <td class="num"><strong>10,540 (пик)</strong></td>
+                <td class="num"><strong>12,280</strong></td>
+                <td class="num"><strong>16,680</strong></td>
+                <td><strong>За 7 суток (неделю): 47,38 м³ | За 14 суток: 94,76 м³</strong></td>
             </tr>
         </tbody>
     </table>
-    <p><small>*Примечание: При организации <b>равномерно-сменной работы бани</b> (ежедневно моется 1 взвод / бригада из 17–18 чел. по графику, чтобы за 7 дней помылись все 120 чел.) расход на баню составляет 0,56 м³/сут (1,12 м³ за 48 ч), а общий расход городка стабилен каждые сутки: <b>6,16 м³/сут (12,32 м³ за любые 48 часов)</b>.</small></p>
 
     <div class="page-break"></div>
 
-    <h2>Раздел В и Г. Образование стоков и Сводный водный баланс (за 48 часов и за 14 суток)</h2>
-    <p>В летний период безвозвратные потери воды возрастают за счёт увеличенного питьевого режима (0,84 м³ за 48 ч полностью поглощается и испаряется через потоотделение и дыхание) и интенсивного испарения с открытых поверхностей. Приток биомассы от 120 мужчин составляет <strong>1,6 л/(чел.·сут) = +0,384 м³ за 48 ч</strong>.</p>
+    <h2>Раздел В и Г. Образование стоков и Сводный водный баланс (без туалетов)</h2>
+    <p>Поскольку туалет исключён, в накопительную ёмкость городка поступают исключительно серые гигиенические стоки (душ, умывальник) и кухонные стоки. Объём стоков меньше объёма поданной чистой воды за счёт полного безвозвратного поглощения питьевой воды (0,84 м³ за 48 ч), испарения при варке пищи в котлах (0,98 м³ за 48 ч) и испарения с открытых поверхностей моечных ванн, полов и трапов.</p>
 
     <table>
         <thead>
             <tr>
                 <th style="width: 27%;">Источник образования стоков</th>
                 <th style="width: 10%;" class="center">Доля возврата (K<sub>возвр</sub>)</th>
-                <th style="width: 11%;" class="num">Стоки: Рядовые сутки, м³</th>
+                <th style="width: 11%;" class="num">Стоки: Рядовые сут., м³</th>
                 <th style="width: 11%;" class="num">Стоки: 48 ч (без бани), м³</th>
                 <th style="width: 11%;" class="num">Стоки: 48 ч (с баней), м³</th>
                 <th style="width: 11%;" class="num">Стоки за 14 суток, м³</th>
-                <th style="width: 19%;">Категория стока и особенности</th>
+                <th style="width: 19%;">Категория стока и требования</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>1. Питьё (лето, 3,5 л/чел.)</strong></td>
+                <td><strong>1. Питьевой режим (лето)</strong></td>
                 <td class="center"><strong>0%</strong> (0,00)</td>
                 <td class="num">0,000</td>
                 <td class="num">0,000</td>
                 <td class="num">0,000</td>
                 <td class="num">0,000</td>
-                <td>Испаряется с потом/дыханием (возврат учтён в п. 4г).</td>
+                <td>Поглощается людьми (пот, дыхание). В сток не идёт.</td>
             </tr>
             <tr>
-                <td><strong>2а. Кухня: вода в пище (котлы)</strong></td>
-                <td class="center"><strong>15%</strong> (0,15)</td>
-                <td class="num">0,045</td>
-                <td class="num">0,090</td>
-                <td class="num">0,090</td>
-                <td class="num">0,630</td>
-                <td><strong>Кухонный сток.</strong> 85% съедается, выкипает или в ТКО.</td>
+                <td><strong>2а. Кухня: вода в блюдах</strong></td>
+                <td class="center"><strong>10%</strong> (0,10)</td>
+                <td class="num">0,055</td>
+                <td class="num">0,109</td>
+                <td class="num">0,109</td>
+                <td class="num">0,764</td>
+                <td>Кухонный сток (слив жидких остатков чая/компотов)</td>
             </tr>
             <tr>
-                <td><strong>2б, 3а, 3б. Кухня: мойка сырья, посуды, котлов</strong></td>
-                <td class="center"><strong>97%</strong> (ср.)</td>
-                <td class="num">2,038</td>
-                <td class="num">4,076</td>
-                <td class="num">4,076</td>
-                <td class="num">28,532</td>
-                <td><strong>Кухонный жирный сток.</strong> Обязателен жироуловитель!</td>
+                <td><strong>2б. Кухня: мытьё продуктов</strong></td>
+                <td class="center"><strong>95%</strong> (0,95)</td>
+                <td class="num">0,593</td>
+                <td class="num">1,186</td>
+                <td class="num">1,186</td>
+                <td class="num">8,299</td>
+                <td>Кухонный сток (содержит частицы грунта и взвеси)</td>
             </tr>
             <tr>
-                <td><strong>4а, 4б. Туалет: унитазы и писсуары</strong></td>
-                <td class="center"><strong>100%</strong> (1,00)</td>
-                <td class="num">1,440</td>
-                <td class="num">2,880</td>
-                <td class="num">2,880</td>
-                <td class="num">20,160</td>
-                <td><strong>Фекальный («чёрный») сток.</strong> 50% от унитазов, 50% писсуары.</td>
-            </tr>
-            <tr>
-                <td><strong>4в. Туалет: мытьё рук в раковинах</strong></td>
+                <td><strong>3а, 3б. Кухня: мойка посуды и котлов</strong></td>
                 <td class="center"><strong>98%</strong> (0,98)</td>
-                <td class="num">0,470</td>
-                <td class="num">0,941</td>
-                <td class="num">0,941</td>
-                <td class="num">6,586</td>
-                <td><strong>Серый мыльный сток.</strong> Поступает в общий коллектор.</td>
+                <td class="num">2,822</td>
+                <td class="num">5,645</td>
+                <td class="num">5,645</td>
+                <td class="num">39,514</td>
+                <td><strong>Жиросодержащий сток.</strong> Обязателен жироуловитель!</td>
             </tr>
             <tr>
-                <td><strong>4г. Биомасса от 120 мужчин (моча, кал)</strong></td>
-                <td class="center"><strong>+1,6 л/сут</strong></td>
-                <td class="num">+0,192</td>
-                <td class="num">+0,384</td>
-                <td class="num">+0,384</td>
-                <td class="num">+2,688</td>
-                <td><strong>Фекальный («чёрный») сток.</strong> Внешний приток биомассы.</td>
-            </tr>
-            <tr>
-                <td><strong>5. Отдельный полевой умывальник</strong></td>
+                <td><strong>4. Полевой умывальник (12×7 м)</strong></td>
                 <td class="center"><strong>96%</strong> (лето)</td>
                 <td class="num">1,382</td>
                 <td class="num">2,765</td>
                 <td class="num">2,765</td>
                 <td class="num">19,354</td>
-                <td><strong>Серый сток.</strong> 4% — унос на полотенцах и летнее испарение.</td>
+                <td>Серый мыльный сток (4% унос на полотенцах и испарение)</td>
             </tr>
             <tr>
-                <td><strong>6а, 6б. Уборка туалета, кухни, промывка</strong></td>
-                <td class="center"><strong>85%</strong> (0,85)</td>
-                <td class="num">0,255</td>
-                <td class="num">0,510</td>
-                <td class="num">0,510</td>
-                <td class="num">3,570</td>
-                <td><strong>Хозяйственный сток.</strong> 15% испаряется с полов летом.</td>
+                <td><strong>5. Санобработка кухни и промывка</strong></td>
+                <td class="center"><strong>90%</strong> (0,90)</td>
+                <td class="num">0,207</td>
+                <td class="num">0,414</td>
+                <td class="num">0,414</td>
+                <td class="num">2,898</td>
+                <td>Хозяйственный сток (слив в трап канализации)</td>
             </tr>
             <tr>
-                <td><strong>7а, 7б. Полевая баня (1 раз в 7 дней)</strong></td>
+                <td><strong>6а, 6б. Групповой душ в бане (12 сеток)</strong></td>
                 <td class="center"><strong>96,5%</strong> (ср.)</td>
-                <td class="num">0,000<br><small>(3,62 в банный)</small></td>
+                <td class="num">0,000<br><small>(4,25 в банный)</small></td>
                 <td class="num">0,000</td>
-                <td class="num"><strong>3,619</strong></td>
-                <td class="num"><strong>7,238</strong><br><small>(2 бани за 14 сут)</small></td>
-                <td><strong>Серый банный сток.</strong> 3,5% — пар и унос влаги на телах.</td>
+                <td class="num"><strong>4,246</strong></td>
+                <td class="num"><strong>8,492</strong><br><small>(2 банных дня/14 сут)</small></td>
+                <td>Серый банный сток (3,5% — пар и влага на телах)</td>
             </tr>
             <tr class="row-subtotal">
-                <td><strong>ТЕОРЕТИЧЕСКИЙ ОБЪЁМ СТОКОВ (W<sub>ст.теор</sub>)*</strong></td>
-                <td class="center"><strong>90,7–92,2%</strong></td>
-                <td class="num"><strong>5,082</strong>*</td>
-                <td class="num"><strong>10,164</strong>*</td>
-                <td class="num"><strong>13,783</strong>*</td>
-                <td class="num"><strong>78,410</strong>*</td>
-                <td>*Точная сумма по компонентам (рядовые сутки = 5,08 м³/сут).</td>
+                <td><strong>ТЕОРЕТИЧЕСКИЙ ОБЪЁМ СТОКОВ (W<sub>ст.теор</sub>)</strong></td>
+                <td class="center"><strong>89,2–89,7%</strong></td>
+                <td class="num"><strong>5,477</strong></td>
+                <td class="num"><strong>10,954</strong></td>
+                <td class="num"><strong>14,971</strong></td>
+                <td class="num"><strong>84,930</strong></td>
+                <td>При сменной бане: 6,02 м³/сут (12,05 м³ за 48 ч)</td>
             </tr>
             <tr class="row-total">
                 <td><strong>РАСЧЁТНЫЙ ОБЪЁМ СТОКОВ С K=1,10 (W<sub>ст.расч</sub>)</strong></td>
                 <td class="center"><strong>Запас +10%</strong></td>
-                <td class="num"><strong>5,590</strong></td>
-                <td class="num"><strong>11,180</strong></td>
-                <td class="num"><strong>15,161</strong></td>
-                <td class="num"><strong>86,251</strong></td>
-                <td><strong>В банный день стоки достигают 8,70 м³/сут (с запасом 9,57 м³).</strong></td>
+                <td class="num"><strong>6,025</strong></td>
+                <td class="num"><strong>12,050</strong></td>
+                <td class="num"><strong>16,468</strong></td>
+                <td class="num"><strong>93,423</strong></td>
+                <td><strong>В банный день стоки достигают 9,50 м³ (с запасом 10,45 м³)</strong></td>
             </tr>
         </tbody>
     </table>
-    <p><small>*Примечание по арифметике строк: в строке 4в (0,480 м³/сут) учтено мытьё рук в туалете; при сложении всех статей без дублирования умывальника/раковин: в рядовые сутки подача воды составляет 5,600 м³, безвозвратные потери (питьё 0,420 + пища 0,255 + испарение мойки/умывальника/уборки 0,235) = −0,910 м³/сут, приток биомассы = +0,192 м³/сут. Итого чистый приток стоков в рядовые сутки: <b>5,600 − 0,910 + 0,192 = 4,882...5,082 м³/сут (10,16 м³ за 48 ч без бани и 13,78 м³ за 48 ч с баней)</b>.</small></p>
 
-    <h2>Раздел Д. Подбор ёмкостей и логистика при длительной стоянке (&gt; 14 суток)</h2>
+    <h2>Раздел Д. Насосная станция (павильон 12×7 м), подбор ёмкостей и логистика</h2>
     <div class="two-col">
-        <div class="alert-box info">
-            <strong>Выбор оптимального режима бани для снижения объёма баков:</strong><br>
-            • Если проводить баню <b>для всех 120 мужчин в один день</b> (например, в субботу), суточный расход воды прыгает с 5,60 до <b>9,35 м³/сут</b>, а стоков — с 5,08 до <b>8,70 м³/сут</b> (с запасом 9,57 м³). Кроме того, пропустить 120 человек через баню на 6 рожков за один вечер потребует <b>6,5 часов непрерывной топки</b>.<br>
-            • <b>Инженерная рекомендация:</b> Установить <b>скользящий (посменный) график работы бани</b> — по 20 человек в день в течение 6 дней недели (120 чел. за неделю), а 7-й день — санитарный день бани. В этом случае суточный расход воды равен <b>6,23 м³/сут (12,45 м³ за 48 ч)</b>, баня работает всего по 1,5 часа в вечернее время, а нагрузка на водовозы и ассенизаторы становится идеально равномерной!
+        <div class="formula-box">
+            <strong>Гидравлический расчёт и мощность насосной станции:</strong>
+            <div class="f-desc">
+                • <b>Пиковый секундный водоразбор (вечерний пик, СП 30.13330):</b><br>
+                — Душ в бане: 12 сеток × 0,12 л/с = <b>1,44 л/с</b>;<br>
+                — Умывальник 12×7 м: 12 из 24 кранов × 0,07 л/с = <b>0,84 л/с</b>;<br>
+                — Кухня: мойка котлов и ванны = <b>0,50 л/с</b>.<br>
+                <b>Итого пиковый расход: q<sub>пик</sub> = 2,78 л/с (10,0 м³/ч).</b><br>
+                • <b>Требуемый напор:</b> H<sub>тр</sub> = H<sub>геом</sub> (3,5 м) + Δh<sub>пот</sub> (7,1 м в трубе ПНД ∅ 63 мм на 100 м) + H<sub>св</sub> (20 м) = <b>30,6 м вод. ст. (принимаем 32 м вод. ст. / 3,2 бар)</b>.<br>
+                • <b>Мощность насоса:</b> P<sub>гидр</sub> = 0,87 кВт; с учётом КПД агрегата P<sub>эл</sub> = 1,57 кВт. <b>Принимается стандартный электродвигатель 2,2 кВт (380 В)</b>.<br>
+                • <b>Комплектация:</b> Сдвоенная станция (1 раб. + 1 рез.) с частотным преобразователем, гидроаккумулятор <b>300–500 л</b>, автоматический ввод резерва (АВР).
+            </div>
         </div>
-        <div class="alert-box">
-            <strong>Специфика стоянки более 14 суток (лето, жара):</strong><br>
-            1. <b>Биообрастание баков чистой воды:</b> При температуре воздуха +25...+30 °C в стоячей воде пластикового бака через 5–7 суток начинается размножение бактерий и цветение. <b>Обязательно:</b> использовать <b>секционную схему из 3 баков по 5,0 м³ (суммарно 15,0 м³)</b> под светонепроницаемым тентом, чтобы раз в 7 дней поочерёдно опорожнять, промывать и хлорировать каждую секцию без остановки водоснабжения лагеря.<br>
-            2. <b>Обязательность жироуловителя:</b> За 14 суток через канализацию пройдёт <b>28,5 м³ жирных кухонных стоков</b> (при многоразовой посуде). Без подмоечного жироуловителя-отстойника (0,5 л/с, 40–50 л) зарастание труб жиром неизбежно на 4–5-е сутки.
+        <div class="formula-box">
+            <strong>Компоновка павильона насосной станции (12×7 м = 84 м²):</strong>
+            <div class="f-desc">
+                Пятно 84 м² позволяет разместить закрытый отапливаемый санитарный блок водоподготовки:<br>
+                • <b>Зона резервуарного парка (40 м²):</b> Кассета из 5 горизонтальных пищевых баков по <b>5,0 м³ (номинал 25,0 м³)</b>, объединённых общим коллектором ∅ 75 мм.<br>
+                • <b>Насосно-технологическая зона (24 м²):</b> Сдвоенная насосная станция 10 м³/ч, гидробаки 2×200 л, сетчатые самопромывные фильтры, установка УФ-обеззараживания воды DUV (10 м³/ч).<br>
+                • <b>Зона водоприёма и щитовая (20 м²):</b> Приёмный патрубок с БРС `Camlock 3"`, обратным клапаном и воздушным фильтром; шкаф управления с защитой от сухого хода.
+            </div>
         </div>
     </div>
 
@@ -702,87 +665,87 @@
             <tr>
                 <th style="width: 34%;">Параметр подбора ёмкостей и транспорта</th>
                 <th style="width: 22%;" class="center">Сценарий 1: Экономный<br><small>(Однораз. посуда + сменная баня по 20 л)</small></th>
-                <th style="width: 22%;" class="center">Сценарий 2: Базовый со сменной баней<br><small>(По 17–20 чел./сут по 30 л, многораз. посуда)</small></th>
-                <th style="width: 22%;" class="center">Сценарий 3: Пиковый («Банный день» + жара +32 °C)<br><small>(Все 120 чел. в 1 день + летний пик)</small></th>
+                <th style="width: 22%;" class="center">Сценарий 2: Базовый со сменной баней<br><small>(По 17–18 чел./сут по 35 л, многораз. посуда)</small></th>
+                <th style="width: 22%;" class="center">Сценарий 3: Пиковый («Банный день» + жара +28 °C)<br><small>(Все 120 чел. в 1 день, 13 блюд/чел.)</small></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Расход воды за 48 ч / Полезный объём с резервом +20%</strong></td>
-                <td class="center">6,20 м³ / <strong>7,44 м³</strong></td>
-                <td class="center">12,32 м³ / <strong>14,78 м³</strong></td>
-                <td class="center">17,50 м³ / <strong>21,00 м³</strong></td>
+                <td><strong>Расход чистой воды за 48 ч / Запас с резервом +20%</strong></td>
+                <td class="center">7,60 м³ / <strong>9,12 м³</strong></td>
+                <td class="center">13,48 м³ / <strong>16,18 м³</strong></td>
+                <td class="center">16,68 м³ / <strong>20,02 м³</strong></td>
             </tr>
             <tr class="row-subtotal">
                 <td><strong>Рекомендуемый номинал ёмкости ХВС (η=0,85)</strong></td>
-                <td class="center"><strong>10,0 м³ (2×5 м³)</strong></td>
-                <td class="center"><strong>15,0 м³ (3×5 м³) — хватит на 48 ч!</strong></td>
-                <td class="center"><strong>15,0 м³</strong> (с дозаправкой) или <strong>25,0 м³</strong></td>
+                <td class="center"><strong>12,0 м³</strong></td>
+                <td class="center"><strong>20,0 м³ (4×5 м³)</strong></td>
+                <td class="center"><strong>25,0 м³ (5×5 м³) — в павильоне 12×7 м!</strong></td>
             </tr>
             <tr>
                 <td><strong>Расчётный объём стоков за 48 ч (с запасом K=1,10)</strong></td>
-                <td class="center"><strong>6,15 м³</strong> (3,08 м³/сут)</td>
-                <td class="center"><strong>12,36 м³</strong> (6,18 м³/сут)</td>
-                <td class="center"><strong>17,60 м³</strong> (до 10,8 м³ в банный день)</td>
+                <td class="center"><strong>7,45 м³</strong> (3,73 м³/сут)</td>
+                <td class="center"><strong>13,25 м³</strong> (6,63 м³/сут)</td>
+                <td class="center"><strong>16,47 м³</strong> (до 10,45 м³ в банный день)</td>
             </tr>
             <tr class="row-subtotal">
-                <td><strong>Рекомендуемый номинал ёмкости стоков (η=0,80)</strong></td>
-                <td class="center"><strong>8,0–10,0 м³</strong></td>
-                <td class="center"><strong>15,0 м³ (порог вызова 10,5 м³)</strong></td>
-                <td class="center"><strong>15,0 м³</strong> (вывоз в банный день) или <strong>22 м³</strong></td>
+                <td><strong>Рекомендуемый номинал ёмкости стоков ЖБО (η=0,80)</strong></td>
+                <td class="center"><strong>10,0 м³</strong></td>
+                <td class="center"><strong>16,0–18,0 м³</strong></td>
+                <td class="center"><strong>20,0–22,0 м³ (откачка раз в 48 ч)</strong></td>
             </tr>
             <tr>
-                <td><strong>График водовоза АЦПТ-6,0 (5,8 м³) при стоянке &gt;14 сут</strong></td>
-                <td class="center">1 рейс каждые 2 суток<br>(8 рейсов за 14 дней)</td>
-                <td class="center"><strong>1 рейс в сутки (или 2 рейса раз в 2 дня)</strong><br>(15–16 рейсов за 14 дней)</td>
-                <td class="center">1 рейс в рядовые сут + 2 рейса в банный день (19 рейсов за 14 дней)</td>
+                <td><strong>Рейсы водовоза АЦПТ-6,0 (5,8 м³) за 48 ч</strong></td>
+                <td class="center">2 рейса (10 рейсов за 14 дней)</td>
+                <td class="center"><strong>3 рейса (18 рейсов за 14 дней)</strong></td>
+                <td class="center">3–4 рейса (22 рейса за 14 дней)</td>
             </tr>
             <tr>
-                <td><strong>График ассенизатора КАМАЗ (9,0 м³) при стоянке &gt;14 сут</strong></td>
-                <td class="center">1 рейс каждые 3 суток<br>(5 рейсов за 14 дней)</td>
-                <td class="center"><strong>1 рейс каждые 1,5–2 суток</strong><br>(9–10 рейсов за 14 дней)</td>
-                <td class="center">1 рейс/2 сут + дежурство в банный день (11–12 рейсов за 14 дней)</td>
+                <td><strong>Рейсы ассенизатора КАМАЗ (9,0 м³) за 48 ч</strong></td>
+                <td class="center">1 рейс (5 рейсов за 14 дней)</td>
+                <td class="center"><strong>1–2 рейса (10 рейсов за 14 дней)</strong></td>
+                <td class="center">2 рейса (13 рейсов за 14 дней)</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>Раздел Е, Ж, З. Санитарно-противопожарные требования и управление рисками (Лето, &gt;14 суток)</h2>
+    <h2>Раздел Е, Ж, З. Санитарно-противопожарные требования и управление рисками (v3)</h2>
     <table>
         <thead>
             <tr>
-                <th style="width: 22%;">Критический фактор (Лето, 120 М, &gt;14 суток)</th>
-                <th style="width: 25%;">Нормативный документ РФ (актуализация 2026 г.)</th>
+                <th style="width: 22%;">Критический фактор (v3)</th>
+                <th style="width: 25%;">Нормативный документ РФ</th>
                 <th style="width: 53%;">Обязательное инженерное и организационное решение</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>1. Пропускная способность умывальника без ежедневной бани</strong></td>
+                <td><strong>1. Отвод жирных стоков кухни (1560 блюд/сут)</strong></td>
+                <td><strong>СП 30.13330.2020</strong> (п. 19.3);<br><strong>СанПиН 2.3/2.4.3590-20</strong></td>
+                <td>За 14 суток через мойку кухни пройдёт <strong>39,5 м³ жирных стоков</strong>. Без предварительной очистки жир застынет в наружной трубе ∅ 110 мм на 3-и сутки. Обязательна установка <strong>подмоечного цехового жироуловителя (производительностью 1,0–1,5 л/с, объёмом 80–100 л) с гидрозатвором и корзиной сбора пищевых отходов</strong>.</td>
+            </tr>
+            <tr>
+                <td><strong>2. Пропускная способность умывальника (12×7 м)</strong></td>
                 <td><strong>СП 2.4.3648-20</strong> (п. 3.11.4);<br><strong>СанПиН 2.1.3684-21</strong></td>
-                <td>При бане 1 раз в неделю все 120 мужчин вечером моются по пояс и моют ноги в полевом умывальнике. Умывальник должен иметь <strong>не менее 10–12 кранов</strong>, проточный нагрев воды (+35...+40 °C), решётчатый настил и закрытый слив в общую ёмкость ЖБО (сброс мыльной воды на грунт за 14 суток превратит лагерь в зловонное болото и запрещён ст. 51 ФЗ-7).</td>
+                <td>На площадке 84 м² монтируются 2 ряда умывальников по 12 кранов (всего <strong>24 крана</strong>) с решётчатыми деревянными настилами, лотками из нержавеющей стали и подключением выпуска ∅ 110 мм к накопителю ЖБО (сброс мыльной воды на рельеф строго запрещён ст. 51 ФЗ-7).</td>
             </tr>
             <tr>
-                <td><strong>2. Микробная безопасность воды при жаре (+25...+30 °C)</strong></td>
-                <td><strong>ФЗ № 52-ФЗ</strong> (ст. 19);<br><strong>СанПиН 1.2.3685-21</strong>;<br><strong>СП 31.13330.2021</strong> (п. 12.28)</td>
-                <td>1) Кассета из <strong>3 баков по 5 м³</strong> из непрозрачного пищевого ПЭНД под вентилируемым теневым навесом.<br>2) Контроль остаточного свободного хлора в баках каждые 48 ч ($0,3\text{–}0,5\text{ мг/л}$) с дозированием гипохлорита натрия («Акватабс») при падении концентрации.<br>3) Еженедельная поочерёдная мойка и дезинфекция баков.</td>
+                <td><strong>3. Котельная полевой бани (12 сеток в бане 12×7 м)</strong></td>
+                <td><strong>СП 30.13330.2020</strong>;<br>Теплотехнический расчёт</td>
+                <td>Для одновременной работы 12 душевых сеток в течение 2,5 часов требуется подача <strong>2,1 м³ горячей воды (+65 °C)</strong>. Электрические бойлеры исключены (потребовалось бы 50 кВт электроэнергии). В котельном отсеке бани ($20\text{ м}^2$) устанавливается <strong>твердотопливный или дизельный водогрейный котёл мощностью не менее 35–45 кВт</strong> с баком-аккумулятором ГВС на 1000 л.</td>
             </tr>
             <tr>
-                <td><strong>3. Защита от запахов и переполнения ёмкости стоков (15 м³)</strong></td>
-                <td><strong>СанПиН 2.1.3684-21</strong> (п. 22, 23);<br><strong>СП 30.13330.2020</strong></td>
-                <td>В летнюю жару анаэробное брожение в фекальном баке резко ускоряется. Обязательно: 1) Дозирование биопрепаратов-дезодорантов после каждой откачки; 2) Вентиляционный стояк $\varnothing 110\text{ мм}$ высотой $2,5\text{ м}$ с угольным фильтром; 3) Автоматическая блокировка насоса ХВС при заполнении бака стоков на 85% ($12,75\text{ м}^3$).</td>
-            </tr>
-            <tr>
-                <td><strong>4. Пожарная безопасность в летний пожароопасный сезон</strong></td>
-                <td><strong>ППР РФ № 1479</strong> (п. 66, 70, 391–399, Прил. № 4);<br><strong>СП 8.13130.2020</strong></td>
-                <td>1) Минерализованная опашка шириной <strong>не менее 3,0 м</strong> вокруг городка и выкос сухой травы.<br>2) Вынос полевой кухни КП-130 и печи бани на <strong>30 м</strong> с подветренной стороны, штатные искрогасители на трубах.<br>3) Разбивка палаток на 3 сектора по 40 чел. (разрыв 15 м между секторами, 2,5 м между палатками), извещатели ИП-212, 12 огнетушителей ОП-5, пожарный кран <strong>ГМ-50</strong> на баке ХВС + бензиновая мотопомпа.</td>
+                <td><strong>4. Противопожарные решения в павильоне 12×7 м</strong></td>
+                <td><strong>ППР РФ № 1479</strong> (п. 391–399);<br><strong>СП 8.13130.2020</strong></td>
+                <td>На напорном коллекторе насосной станции и нижнем спуске кассеты чистой воды (25 м³) монтируется пожарный патрубок с шаровым краном и полугайкой <strong>ГМ-50 / ГМ-70</strong>. В павильоне 12×7 м размещается переносная бензиновая мотопомпа (подачей 600–800 л/мин), что обеспечивает возможность немедленной подачи воды на тушение до прибытия подразделений МЧС.</td>
             </tr>
         </tbody>
     </table>
 
     <div class="footer-sign">
-        <div>Разработал: Инженер-проектировщик ВК / специалист по СЭБ и ПБ</div>
-        <div>Контингент: 120 мужчин | Сезон: Лето | Срок: &gt; 14 суток (расчётный срез 48 ч)</div>
-        <div>Редакция № 2 (2026 г.)</div>
+        <div>Разработал: Инженер-проектировщик систем ВК, специалист по СЭБ и ПБ</div>
+        <div>Объект: 120 мужчин | Московская область | Лето | Срок: &gt; 14 суток | Без туалета</div>
+        <div>Версия документа: v3 (2026 г.)</div>
     </div>
 
 </body>
