@@ -2,23 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Летняя стоянка на 120-х мужчин v4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Летняя стоянка на 120-х мужчин v5</title>
     <style>
+        /* Настройка для печати в PDF */
         @page {
             size: A4 portrait;
-            margin: 12mm 11mm 14mm 11mm;
-            @bottom-right {
-                content: "Стр. " counter(page) " из " counter(pages);
-                font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-                font-size: 7.5pt;
-                color: #64748b;
-            }
-            @bottom-left {
-                content: "Шифр: ПГ-120М/МО-ЛЕТО-ВК-v3 | 120 мужчин (сменная баня, кухня 13 блюд, единый бак 20 м³)";
-                font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-                font-size: 7.5pt;
-                color: #64748b;
-            }
+            margin: 12mm 15mm 14mm 15mm;
         }
 
         * {
@@ -28,547 +18,686 @@
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
-            font-size: 8.7pt;
-            line-height: 1.35;
-            color: #1e293b;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15.5px; /* Крупный читаемый шрифт для смартфона */
+            line-height: 1.5;
+            color: #0f172a;
             margin: 0;
-            padding: 0;
-            background: #ffffff;
+            padding: 16px 12px 40px 12px;
+            background-color: #e2e8f0;
         }
 
+        /* Узкий центральный контейнер (-30% от стандартной широкой полосы, идеально для горизонтального смартфона ~720px) */
+        .page-container {
+            max-width: 720px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 22px 24px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.10);
+        }
+
+        /* Шапка документа */
         .doc-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 65%, #0369a1 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 70%, #0284c7 100%);
             color: #ffffff;
-            padding: 16px 20px;
-            border-radius: 6px;
-            margin-bottom: 11px;
+            padding: 20px 22px;
+            border-radius: 8px;
+            margin-bottom: 18px;
             border-left: 6px solid #38bdf8;
         }
 
         .doc-header .doc-meta {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            font-size: 7.5pt;
+            gap: 8px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.6px;
             color: #bae6fd;
-            margin-bottom: 5px;
-            font-weight: 600;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .doc-header h1 {
-            font-size: 13.5pt;
-            margin: 0 0 5px 0;
-            font-weight: 700;
-            line-height: 1.22;
+            font-size: 20px;
+            margin: 0 0 8px 0;
+            font-weight: 800;
+            line-height: 1.28;
             color: #ffffff;
         }
 
         .doc-header .doc-subtitle {
-            font-size: 8.5pt;
+            font-size: 14px;
             color: #e0f2fe;
             margin: 0;
+            line-height: 1.4;
         }
 
-        .spec-banner {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 6px;
-            background-color: #f0f9ff;
-            border: 1px solid #7dd3fc;
-            border-radius: 5px;
-            padding: 7px 10px;
-            margin-bottom: 11px;
-            font-size: 7.8pt;
-        }
-
-        .spec-banner div strong {
-            display: block;
-            color: #0c4a6e;
-            font-size: 8.5pt;
-        }
-
-        .spec-banner div span {
-            color: #0369a1;
-            font-size: 7.2pt;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
+        /* Карточки ключевых показателей (2х2 для горизонтального экрана смартфона) */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-bottom: 12px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .kpi-card {
-            background: #ffffff;
+            background: #f8fafc;
             border: 1px solid #cbd5e1;
-            border-top: 4px solid #0284c7;
-            border-radius: 5px;
-            padding: 8px 10px;
+            border-left: 5px solid #0284c7;
+            border-radius: 6px;
+            padding: 12px 14px;
         }
 
-        .kpi-card.bath { border-top-color: #7c3aed; }
-        .kpi-card.sewage { border-top-color: #d97706; }
-        .kpi-card.pump { border-top-color: #059669; }
+        .kpi-card.tank { border-left-color: #7c3aed; }
+        .kpi-card.sewage { border-left-color: #d97706; }
+        .kpi-card.pump { border-left-color: #059669; }
 
         .kpi-title {
-            font-size: 7pt;
+            font-size: 12px;
             text-transform: uppercase;
-            color: #64748b;
+            color: #475569;
             font-weight: 700;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .kpi-value {
-            font-size: 12.5pt;
+            font-size: 22px;
             font-weight: 800;
             color: #0f172a;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .kpi-sub {
-            font-size: 7.3pt;
-            color: #475569;
-            line-height: 1.22;
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.35;
         }
 
+        /* Заголовки разделов */
         h2 {
-            font-size: 10.2pt;
-            font-weight: 700;
+            font-size: 17px;
+            font-weight: 800;
             color: #0f172a;
             background-color: #f1f5f9;
-            border-left: 4px solid #1e3a8a;
-            padding: 5px 9px;
-            margin: 11px 0 6px 0;
-            page-break-after: avoid;
+            border-left: 5px solid #1e3a8a;
+            padding: 9px 12px;
+            margin: 24px 0 12px 0;
+            border-radius: 0 6px 6px 0;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
-        p { margin: 0 0 5px 0; text-align: justify; }
+        h3 {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 14px 0 8px 0;
+        }
+
+        p {
+            margin: 0 0 10px 0;
+        }
+
+        ul, ol {
+            margin: 0 0 12px 0;
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Обёртка таблиц для удобного чтения на смартфоне */
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 8px;
-            font-size: 7.8pt;
+            font-size: 14px;
+            min-width: 580px;
         }
-
-        tr { page-break-inside: avoid; }
-        thead { display: table-header-group; }
 
         th {
             background-color: #1e293b;
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 700;
             text-align: left;
-            padding: 5px 6px;
-            border: 1px solid #1e293b;
-            font-size: 7.5pt;
+            padding: 9px 10px;
+            border: 1px solid #334155;
+            font-size: 13px;
+            line-height: 1.3;
         }
 
         td {
-            padding: 4.5px 6px;
+            padding: 8px 10px;
             border: 1px solid #cbd5e1;
             vertical-align: top;
+            line-height: 1.38;
         }
 
         tbody tr:nth-child(even) { background-color: #f8fafc; }
 
         .row-total {
             background-color: #e0f2fe !important;
-            font-weight: 700;
+            font-weight: 800;
             color: #0c4a6e;
+        }
+
+        .row-subtotal {
+            background-color: #f1f5f9 !important;
+            font-weight: 700;
+            color: #1e293b;
         }
 
         .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
         .center { text-align: center; }
 
+        /* Бейджи статусов */
         .badge {
             display: inline-block;
-            padding: 1px 4.5px;
-            font-size: 6.8pt;
+            padding: 2px 7px;
+            font-size: 11.5px;
             font-weight: 700;
-            border-radius: 3px;
+            border-radius: 4px;
             text-transform: uppercase;
             white-space: nowrap;
         }
 
+        .badge-norm { background-color: #dcfce7; color: #166534; border: 1px solid #86efac; }
         .badge-calc { background-color: #e0f2fe; color: #075985; border: 1px solid #7dd3fc; }
-        .badge-rec { background-color: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; }
         .badge-assump { background-color: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+        .badge-rec { background-color: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; }
+        .badge-crit { background-color: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
 
-        .formula-box {
+        /* Специальная секция после каждого раздела: Формулы, Комментарии и Нормативы */
+        .calc-norm-section {
             background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-left: 3.5px solid #0284c7;
+            border: 1px solid #94a3b8;
+            border-left: 5px solid #0284c7;
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 12px 0 22px 0;
+        }
+
+        .calc-norm-title {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #0369a1;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .formula-line {
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 6px 0 8px 0;
+            overflow-x: auto;
+        }
+
+        .norm-ref {
+            font-size: 13.5px;
+            color: #334155;
+            background-color: #eff6ff;
+            border-left: 3px solid #3b82f6;
             padding: 6px 10px;
-            margin: 5px 0 8px 0;
-            font-size: 8.2pt;
-            page-break-inside: avoid;
+            margin-top: 8px;
+            border-radius: 0 4px 4px 0;
         }
-
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            page-break-inside: avoid;
-        }
-
-        .page-break { page-break-before: always; }
 
         .footer-sign {
-            margin-top: 10px;
-            border-top: 1.5px solid #1e293b;
-            padding-top: 6px;
+            margin-top: 24px;
+            border-top: 2px solid #1e293b;
+            padding-top: 10px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            font-size: 7.5pt;
+            gap: 8px;
+            font-size: 13px;
             color: #475569;
+        }
+
+        @media print {
+            body { background: #ffffff; padding: 0; font-size: 10.5pt; }
+            .page-container { max-width: 100%; box-shadow: none; padding: 0; }
+            .calc-norm-section { page-break-inside: avoid; }
+            tr { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
 
+<div class="page-container">
+
+    <!-- ШАПКА ОТЧЁТА -->
     <div class="doc-header">
         <div class="doc-meta">
-            <span>Инженерный расчёт ВК, СЭБ и ПБ (Версия v3 — Сменная баня)</span>
-            <span>Московская область | Актуализация норм РФ: 2026 г.</span>
+            <span>Шифр: ПГ-120М/МО-ЛЕТО-ВК-v5</span>
+            <span>Версия: v5 (Актуализация норм РФ 2026 г.)</span>
         </div>
-        <h1>ИНЖЕНЕРНЫЙ РАСЧЁТ СИСТЕМ ВОДОСНАБЖЕНИЯ, ВОДООТВЕДЕНИЯ И МОЩНОСТИ НАСОСНОЙ СТАНЦИИ</h1>
-        <p class="doc-subtitle">Палаточный городок на 120 мужчин (лето, стоянка &gt; 14 суток, сменная баня, кухня 13 блюд/чел., многоразовая посуда, единый накопитель воды 20 м³, без туалета)</p>
+        <h1>ИНЖЕНЕРНЫЙ РАСЧЁТ ВОДОСНАБЖЕНИЯ, ВОДООТВЕДЕНИЯ И МОЩНОСТИ НАСОСНОЙ СТАНЦИИ</h1>
+        <p class="doc-subtitle">Летняя стоянка на 120 мужчин (&gt; 14 суток, Московская область). Ежедневный групповой душ (12×7 м), полевая кухня на 13 блюд/сут (многоразовая посуда), умывальник (12×7 м), единый накопитель воды на 48 ч и насосная станция (12×7 м). Без туалетов.</p>
     </div>
 
-    <div class="spec-banner">
-        <div>
-            <span>Контингент:</span>
-            <strong>120 мужчин (МО, лето)</strong>
-        </div>
-        <div>
-            <span>Режим бани:</span>
-            <strong>Сменный (17–18 чел./сут)</strong>
-        </div>
-        <div>
-            <span>Полевая кухня:</span>
-            <strong>13 блюд (многоразовая посуда)</strong>
-        </div>
-        <div>
-            <span>Единый накопитель ХВС:</span>
-            <strong>20,0 м³ (в павильоне 12×7)</strong>
-        </div>
-        <div>
-            <span>Насосная станция:</span>
-            <strong>10 м³/ч, 32 м (2,2 кВт)</strong>
-        </div>
-    </div>
-
+    <!-- КАРТОЧКИ ОСНОВНЫХ ПОКАЗАТЕЛЕЙ (KPI) -->
     <div class="kpi-grid">
         <div class="kpi-card">
-            <div class="kpi-title">Расход воды за 48 часов</div>
-            <div class="kpi-value">13,48 м³</div>
-            <div class="kpi-sub">Суточный стабильный: <strong>6,74 м³/сут</strong><br>Полезный с резервом +20%: <strong>16,18 м³</strong></div>
+            <div class="kpi-title">1. Потребность в воде (48 ч)</div>
+            <div class="kpi-value">19,92 м³</div>
+            <div class="kpi-sub">Суточный расход: <strong>9,96 м³/сут</strong> (83,0 л/чел.)<br>Полезный запас (+20%): <strong>23,90 м³</strong></div>
         </div>
-        <div class="kpi-card bath">
-            <div class="kpi-title">Единый бак чистой воды</div>
-            <div class="kpi-value">20,0 м³</div>
-            <div class="kpi-sub">Горизонтальный монолитный бак<br>Запас на 48 ч + резерв (η = 0,81)</div>
+        <div class="kpi-card tank">
+            <div class="kpi-title">2. Единый накопитель ХВС</div>
+            <div class="kpi-value">30,0 м³</div>
+            <div class="kpi-sub">Один монолитный резервуар (η = 0,81)<br>Заправка раз в 48 ч: <strong>5 рейсов АЦПТ-5,0</strong></div>
         </div>
         <div class="kpi-card sewage">
-            <div class="kpi-title">Объём стоков ЖБО за 48 ч</div>
-            <div class="kpi-value">12,05 м³</div>
-            <div class="kpi-sub">Расчётный с запасом 10%: <strong>13,25 м³</strong><br>Номинал ёмкости стоков: <strong>16–18 м³</strong></div>
+            <div class="kpi-title">3. Объём стоков ЖБО (48 ч)</div>
+            <div class="kpi-value">18,29 м³</div>
+            <div class="kpi-sub">С запасом K=1,10: <strong>20,12 м³</strong><br>Ёмкость ЖБО: <strong>25,0 м³</strong> (2 рейса КАМАЗ)</div>
         </div>
         <div class="kpi-card pump">
-            <div class="kpi-title">Насосная станция (12×7 м)</div>
+            <div class="kpi-title">4. Насосная станция (12×7 м)</div>
             <div class="kpi-value">10,0 м³/ч / 32 м</div>
-            <div class="kpi-sub">Пиковый секундный: <strong>2,78 л/с</strong><br>Двигатель: <strong>2,2 кВт</strong> (раб. + 100% рез.)</div>
+            <div class="kpi-sub">Пиковый секундный расход: <strong>2,78 л/с</strong><br>Электродвигатель: <strong>2,2 кВт</strong> (1 раб. + 1 рез.)</div>
         </div>
     </div>
 
-    <h2>Раздел А. Сводные расчётные параметры городка (Сменная баня, 48 часов)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 38%;">Наименование показателя</th>
-                <th style="width: 20%;" class="center">Значение показателя</th>
-                <th style="width: 14%;" class="center">Статус</th>
-                <th style="width: 28%;">Инженерное обоснование</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Суточный расход чистой воды</strong></td>
-                <td class="num"><strong>6,74 м³/сут</strong></td>
-                <td class="center"><span class="badge badge-calc">Расчётное</span></td>
-                <td>Стабильный суточный баланс при сменной помывке</td>
-            </tr>
-            <tr>
-                <td><strong>Общий расход чистой воды за 48 часов</strong></td>
-                <td class="num"><strong>13,48 м³</strong></td>
-                <td class="center"><span class="badge badge-calc">Расчётное</span></td>
-                <td>Нетто-потребление городка за межавтономный интервал</td>
-            </tr>
-            <tr>
-                <td><strong>Минимальный полезный объём на 48 ч (+20% резерв)</strong></td>
-                <td class="num"><strong>16,18 м³</strong></td>
-                <td class="center"><span class="badge badge-calc">Расчётное</span></td>
-                <td>Включает запас на случай дорожных задержек водовоза в МО</td>
-            </tr>
-            <tr>
-                <td><strong>Номинальный объём единого накопителя ХВС</strong></td>
-                <td class="num"><strong>20,0 м³</strong></td>
-                <td class="center"><span class="badge badge-rec">Рекомендация</span></td>
-                <td>Один монолитный бак (η = 0,81) в павильоне 12×7 м</td>
-            </tr>
-            <tr>
-                <td><strong>Теоретический объём стоков за 48 часов (W<sub>ст.теор</sub>)</strong></td>
-                <td class="num"><strong>12,05 м³</strong> (6,02 м³/сут)</td>
-                <td class="center"><span class="badge badge-calc">Расчётное</span></td>
-                <td>Возврат 89,4% от ХВС (безвозвратные потери 1,43 м³)</td>
-            </tr>
-            <tr>
-                <td><strong>Расчётный объём стоков с запасом 10% (W<sub>ст.расч</sub>)</strong></td>
-                <td class="num"><strong>13,25 м³</strong></td>
-                <td class="center"><span class="badge badge-calc">Расчётное</span></td>
-                <td>Базовый объём для договоров утилизации ЖБО</td>
-            </tr>
-            <tr>
-                <td><strong>Рекомендуемый объём накопителя стоков (η = 0,80)</strong></td>
-                <td class="num"><strong>16,0–18,0 м³</strong></td>
-                <td class="center"><span class="badge badge-rec">Рекомендация</span></td>
-                <td>Рабочий объём до поплавковой блокировки насосов — 14,5 м³</td>
-            </tr>
-            <tr>
-                <td><strong>Рейсы водовоза АЦПТ-6,0 (полезный объём 5,8 м³)</strong></td>
-                <td class="num"><strong>3 рейса / 48 ч</strong></td>
-                <td class="center"><span class="badge badge-assump">Допущение</span></td>
-                <td>Суммарно 17,4 м³ доставки на 48 ч с пополнением бака</td>
-            </tr>
-            <tr>
-                <td><strong>Рейсы ассенизатора КАМАЗ (9,0 м³)</strong></td>
-                <td class="num"><strong>2 рейса / 48 ч</strong></td>
-                <td class="center"><span class="badge badge-assump">Допущение</span></td>
-                <td>Вывоз ЖБО 1 раз в двое суток (или по 1 рейсу в сутки)</td>
-            </tr>
-            <tr>
-                <td><strong>Подача и напор насосной станции ХВС (пик)</strong></td>
-                <td class="num"><strong>Q = 10,0 м³/ч, H = 32 м</strong></td>
-                <td class="center"><span class="badge badge-calc">Расчётное</span></td>
-                <td>Пиковый секундный расход q = 2,78 л/с (двигатель 2,2 кВт)</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- РАЗДЕЛ 1: УСЛОВИЯ И ОГРАНИЧЕНИЯ -->
+    <h2>Раздел 1. Условия и ограничения инженерного расчёта (v5)</h2>
+    <ul>
+        <li><strong>Контингент и режим:</strong> 120 человек (100% мужчины), летний сезон, Московская область, стоянка более 14 суток. Все 120 человек находятся на территории и ежедневно пользуются всеми инженерными объектами.</li>
+        <li><strong>Качество и хранение воды:</strong> Вся вода в системе — питьевого качества. Запас обновляется привозным автотранспортом <strong>1 раз в 48 часов</strong> и хранится в <strong>одном едином накопителе</strong> в павильоне насосной станции (12×7 м).</li>
+        <li><strong>Замена бани на ежедневный групповой душ (12×7 м):</strong> Помывка 100% личного состава (120 чел.) осуществляется <strong>каждый день</strong>. Павильон 84 м² вмещает 12 душевых сеток (пропускная способность 48 чел./ч, время работы душа — 2,5 ч/сут).</li>
+        <li><strong>Полевая кухня (13 блюд/день, многоразовая посуда):</strong> Трёхразовое питание (120 чел. × 13 блюд = 1560 условных блюд/сут). Мытьё и ошпаривание многоразовой столовой посуды и котлов КП-130 производится в 3-секционных моечных ваннах.</li>
+        <li><strong>Полевой умывальник (12×7 м):</strong> Павильон 84 м² на 24 водоразборных крана. Так как люди ежедневно моются в душе, на умывальнике выполняются только утренний/вечерний туалет, бритьё и 3-кратное мытьё рук перед едой.</li>
+        <li><strong>Граничное ограничение по туалетам:</strong> Модульные туалеты в расчёт водоснабжения и стоков не входят (автономный цикл). Фекальные («чёрные») стоки отсутствуют.</li>
+        <li><strong>Экологическое ограничение:</strong> Сброс мыльных (серых) и кухонных стоков на рельеф местности или в дренажные канавы Московской области категорически запрещён. Стоки на 100% отводятся в герметичный накопитель ЖБО.</li>
+    </ul>
 
-    <h2>Раздел Б. Детальная ведомость водопотребления городка на 48 часов</h2>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 27%;">Источник водопотребления</th>
-                <th style="width: 15%;" class="center">Удельный расход (q)</th>
-                <th style="width: 20%;">Потребители и операции в сутки</th>
-                <th style="width: 10%;" class="num">Расход/сут, м³</th>
-                <th style="width: 10%;" class="num">Расход/48 ч, м³</th>
-                <th style="width: 18%;">Обоснование</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>1. Питьевой режим (лето, МО)</strong></td>
-                <td class="center">3,5 л/(чел.·сут)</td>
-                <td>N = 120 мужчин, n = 1 сут</td>
-                <td class="num">0,420</td>
-                <td class="num">0,840</td>
-                <td>МР 2.3.1.0253-21, охрана труда летом</td>
-            </tr>
-            <tr>
-                <td><strong>2а. Кухня: вода в составе блюд</strong></td>
-                <td class="center">0,35 л на 1 блюдо</td>
-                <td>1560 блюд/сут (120 М × 13 блюд)</td>
-                <td class="num">0,546</td>
-                <td class="num">1,092</td>
-                <td>Котловое довольствие КП-130</td>
-            </tr>
-            <tr>
-                <td><strong>2б. Кухня: мытьё продуктов</strong></td>
-                <td class="center">0,40 л на 1 блюдо</td>
-                <td>1560 блюд/сут</td>
-                <td class="num">0,624</td>
-                <td class="num">1,248</td>
-                <td>СП 30.13330.2020 (Табл. А.2)</td>
-            </tr>
-            <tr>
-                <td><strong>3а. Кухня: мойка многоразовой посуды</strong></td>
-                <td class="center">1,50 л на 1 блюдо</td>
-                <td>1560 комплектов посуды/сут</td>
-                <td class="num">2,340</td>
-                <td class="num">4,680</td>
-                <td>СанПиН 2.3/2.4.3590-20 (ванны 65 °C)</td>
-            </tr>
-            <tr>
-                <td><strong>3б. Кухня: мойка котлов КП-130</strong></td>
-                <td class="center">180,0 л/цикл</td>
-                <td>1 кухня × 3 мойки/сут</td>
-                <td class="num">0,540</td>
-                <td class="num">1,080</td>
-                <td>Регламент полевых кухонь КП-130</td>
-            </tr>
-            <tr>
-                <td><strong>4. Полевой умывальник (12×7 м, 24 крана)</strong></td>
-                <td class="center">12,0 л/(чел.·сут)</td>
-                <td>Утро/бритьё 3 л + еда 3 л + вечер/ноги 6 л</td>
-                <td class="num">1,440</td>
-                <td class="num">2,880</td>
-                <td>СП 2.4.3648-20 (ежедневный обмыв)</td>
-            </tr>
-            <tr>
-                <td><strong>5а. Групповой душ бани (сменная помывка)</strong></td>
-                <td class="center">35,0 л/помывку</td>
-                <td>17,14 чел./сут (35 помывок за 48 ч)</td>
-                <td class="num">0,600</td>
-                <td class="num">1,225</td>
-                <td>График подразделений (50% ГВС 65 °C)</td>
-            </tr>
-            <tr>
-                <td><strong>5б. Уборка и дезинфекция бани</strong></td>
-                <td class="center">100,0 л/сут</td>
-                <td>1 обработка зала в конце смены</td>
-                <td class="num">0,100</td>
-                <td class="num">0,200</td>
-                <td>СП 2.1.3678-20 (дезинфекция душевых)</td>
-            </tr>
-            <tr>
-                <td><strong>6. Санобработка кухни и промывка ХВС</strong></td>
-                <td class="center">160,0 л/сут</td>
-                <td>Кухня (100 л) + фильтры ХВС (60 л)</td>
-                <td class="num">0,160</td>
-                <td class="num">0,320</td>
-                <td>СанПиН 2.3/2.4.3590-20; регламент ХВС</td>
-            </tr>
-            <tr class="row-total">
-                <td><strong>ИТОГО ПО ГОРОДКУ ЗА 48 ЧАСОВ</strong></td>
-                <td class="center"><strong>56,17 л/(чел.·сут)</strong></td>
-                <td><strong>120 мужчин (240 человеко-суток)</strong></td>
-                <td class="num"><strong>6,770</strong></td>
-                <td class="num"><strong>13,485</strong></td>
-                <td><strong>Принято: 13,48 м³ (6,74 м³/сут)</strong></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="page-break"></div>
-
-    <h2>Раздел В и Г. Образование сточных вод и Сводный водный баланс</h2>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 28%;">Источник сточных вод</th>
-                <th style="width: 14%;" class="num">Подача воды (48 ч), м³</th>
-                <th style="width: 14%;" class="center">Возврат в стоки</th>
-                <th style="width: 14%;" class="num">Стоки/сут, м³</th>
-                <th style="width: 14%;" class="num">Стоки/48 ч, м³</th>
-                <th style="width: 16%;">Категория стока</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>1. Питьевой режим (лето)</strong></td>
-                <td class="num">0,840</td>
-                <td class="center">0% (0,00)</td>
-                <td class="num">0,000</td>
-                <td class="num">0,000</td>
-                <td>Поглощается людьми</td>
-            </tr>
-            <tr>
-                <td><strong>2а. Кухня: вода в составе блюд</strong></td>
-                <td class="num">1,092</td>
-                <td class="center">10% (0,10)</td>
-                <td class="num">0,055</td>
-                <td class="num">0,109</td>
-                <td>Кухонный сток (жидкие остатки)</td>
-            </tr>
-            <tr>
-                <td><strong>2б. Кухня: мытьё продуктов</strong></td>
-                <td class="num">1,248</td>
-                <td class="center">95% (0,95)</td>
-                <td class="num">0,593</td>
-                <td class="num">1,186</td>
-                <td>Кухонный сток с осадком</td>
-            </tr>
-            <tr>
-                <td><strong>3а, 3б. Кухня: мойка посуды и котлов</strong></td>
-                <td class="num">5,760</td>
-                <td class="center">98% (0,98)</td>
-                <td class="num">2,822</td>
-                <td class="num">5,645</td>
-                <td>Жиросодержащий сток</td>
-            </tr>
-            <tr>
-                <td><strong>4. Полевой умывальник (12×7 м)</strong></td>
-                <td class="num">2,880</td>
-                <td class="center">96% (0,96)</td>
-                <td class="num">1,382</td>
-                <td class="num">2,765</td>
-                <td>Серый мыльный сток</td>
-            </tr>
-            <tr>
-                <td><strong>5а, 5б. Душ и уборка бани</strong></td>
-                <td class="num">1,425</td>
-                <td class="center">97% (0,97)</td>
-                <td class="num">0,691</td>
-                <td class="num">1,382</td>
-                <td>Серый банный сток</td>
-            </tr>
-            <tr>
-                <td><strong>6. Санобработка кухни и ХВС</strong></td>
-                <td class="num">0,320</td>
-                <td class="center">90% (0,90)</td>
-                <td class="num">0,144</td>
-                <td class="num">0,288</td>
-                <td>Хозяйственный сток</td>
-            </tr>
-            <tr class="row-total">
-                <td><strong>ИТОГО ТЕОРЕТИЧЕСКИЙ СТОК (W<sub>ст.теор</sub>)</strong></td>
-                <td class="num"><strong>13,485</strong></td>
-                <td class="center"><strong>89,4% от подачи</strong></td>
-                <td class="num"><strong>6,027</strong></td>
-                <td class="num"><strong>12,055</strong></td>
-                <td><strong>Принято: 12,05 м³ за 48 ч</strong></td>
-            </tr>
-            <tr>
-                <td><strong>РАСЧЁТНЫЙ СТОК С ЗАПАСОМ K=1,10</strong></td>
-                <td class="num">—</td>
-                <td class="center"><strong>Запас +10%</strong></td>
-                <td class="num"><strong>6,630</strong></td>
-                <td class="num"><strong>13,260</strong></td>
-                <td><strong>Принято: 13,25 м³ за 48 ч</strong></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>Раздел Д. Инженерные системы павильона 12×7 м и безопасность</h2>
-    <div class="two-col">
-        <div class="formula-box">
-            <strong>Единый накопитель и насосная станция (в павильоне 12×7 м):</strong>
-            <br>• <b>Единый бак чистой воды:</b> Горизонтальный стеклопластиковый или стальной резервуар номиналом <b>20,0 м³</b> (полезный объём с 20% резервом — <b>16,18 м³</b>). Оснащается приёмным штуцером `Camlock 3"`, дыхательным клапаном с воздушным фильтром и защитой от сухого хода.
-            <br>• <b>Насосная станция ХВС:</b> Сдвоенная автоматическая установка (1 раб. + 1 рез.) с частотным преобразователем. Рабочая точка: <b>подача Q = 10,0 м³/ч (2,78 л/с), напор H = 32 м вод. ст.</b>, мощность двигателя <b>2,2 кВт (380 В)</b>, мембранный гидробак <b>300–500 л</b>.
-            <br>• <b>Магистральные трубы:</b> Труба ПНД ПЭ100 SDR17 <b>∅ 63×3,8 мм</b>.
+    <div class="calc-norm-section">
+        <div class="calc-norm-title">📐 Расчётное обоснование, формулы и нормативные ссылки к Разделу 1</div>
+        <p>Расчётная вместимость оборудования на площадках <strong>12 × 7 м (S = 84 м²)</strong> определяется по удельным строительным площадям мобильных зданий и полевых пунктов:</p>
+        <div class="formula-line">
+            N<sub>душ</sub> = S<sub>пом</sub> / f<sub>сетки</sub> = 40 м² / 3,3 м² = 12 душевых сеток; &nbsp;&nbsp; T<sub>мытья</sub> = 120 чел. / (12 сеток × 4 смены/ч) = 2,5 часа/сут
         </div>
-        <div class="formula-box">
-            <strong>Водоотведение кухни и котельная бани:</strong>
-            <br>• <b>Обязательный цеховой жироуловитель:</b> При мойке многоразовой посуды на 1560 блюд/сут образуется 5,65 м³ жирных стоков за 48 ч. Под мойками кухни устанавливается <b>жироуловитель производительностью 1,0–1,5 л/с (объёмом 80–100 л) с сетчатой корзиной для пищевых отходов</b>.
-            <br>• <b>Котельная бани (12 сеток):</b> В котельном отсеке бани 12×7 м монтируется <b>твердотопливный/дизельный котёл мощностью 35–45 кВт</b> с баком-аккумулятором ГВС на 1000 л.
-            <br>• <b>Пожарный резерв:</b> На коллекторе бака 20 м³ монтируется кран с полугайкой <b>ГМ-50</b> + мотопомпа (600–800 л/мин).
+        <div class="norm-ref">
+            <strong>Нормативные ссылки:</strong><br>
+            • <strong>ФЗ № 52-ФЗ «О санитарно-эпидемиологическом благополучии населения» (ст. 19):</strong> обязательность использования воды питьевого качества для питья, кулинарии, мытья посуды и гигиенического душа.<br>
+            • <strong>ФЗ № 7-ФЗ «Об охране окружающей среды» (ст. 51) и Водный кодекс РФ (ст. 44, 60):</strong> прямой запрет сброса неочищенных сточных вод (включая серые мыльные воды) на рельеф и в водоёмы.<br>
+            • <strong>СП 44.13330.2011 «Административные и бытовые здания» (п. 5.14–5.18):</strong> габариты душевых кабин, проходов в групповых душевых и шаг установки кранов умывальников (0,8–0,9 м).
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ 2: ВОДОПОТРЕБЛЕНИЕ -->
+    <h2>Раздел 2. Расчёт водопотребления городка за 48 часов (Ежедневный душ)</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 28%;">Направление расхода питьевой воды</th>
+                    <th style="width: 16%;" class="center">Удельная норма (q)</th>
+                    <th style="width: 22%;">Потребители (120 М) и операции в сутки</th>
+                    <th style="width: 11%;" class="num">За сутки, м³</th>
+                    <th style="width: 11%;" class="num">За 48 ч, м³</th>
+                    <th style="width: 12%;" class="center">Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Питьевой режим (лето, МО)</strong></td>
+                    <td class="center">3,5 л/(чел.·сут)</td>
+                    <td>120 чел. × 1 сут (питьевая вода, чай)</td>
+                    <td class="num">0,420</td>
+                    <td class="num">0,840</td>
+                    <td class="center"><span class="badge badge-assump">Допущение</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2а. Кухня: вода в составе блюд и напитков</strong></td>
+                    <td class="center">0,35 л / блюдо</td>
+                    <td>1560 блюд/сут (120 чел. × 13 блюд)</td>
+                    <td class="num">0,546</td>
+                    <td class="num">1,092</td>
+                    <td class="center"><span class="badge badge-calc">Расчётное</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2б. Кухня: мытьё сырья и кулинария</strong></td>
+                    <td class="center">0,40 л / блюдо</td>
+                    <td>1560 блюд/сут (овощи, крупы, мясо)</td>
+                    <td class="num">0,624</td>
+                    <td class="num">1,248</td>
+                    <td class="center"><span class="badge badge-norm">СП 30.13330</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3а. Кухня: мойка многоразовой посуды</strong></td>
+                    <td class="center">1,50 л / блюдо</td>
+                    <td>1560 комплектов/сут в 3-секц. ваннах</td>
+                    <td class="num">2,340</td>
+                    <td class="num">4,680</td>
+                    <td class="center"><span class="badge badge-norm">СанПиН 3590</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3б. Кухня: мойка варочных котлов КП-130</strong></td>
+                    <td class="center">180,0 л / цикл</td>
+                    <td>1 кухня (4 котла) × 3 мойки/сут</td>
+                    <td class="num">0,540</td>
+                    <td class="num">1,080</td>
+                    <td class="center"><span class="badge badge-assump">Регламент</span></td>
+                </tr>
+                <tr>
+                    <td><strong>4. Полевой умывальник (12×7 м, 24 крана)</strong></td>
+                    <td class="center">7,0 л/(чел.·сут)</td>
+                    <td>Утро/вечер/бритьё 2×2,0 л + руки перед едой 3×1,0 л</td>
+                    <td class="num">0,840</td>
+                    <td class="num">1,680</td>
+                    <td class="center"><span class="badge badge-calc">Расчётное</span></td>
+                </tr>
+                <tr>
+                    <td><strong>5а. Групповой душ (12×7 м, 12 сеток, ежедневно)</strong></td>
+                    <td class="center">35,0 л / помывку</td>
+                    <td>120 чел. × 1 раз/сут (240 помывок за 48 ч)</td>
+                    <td class="num">4,200</td>
+                    <td class="num">8,400</td>
+                    <td class="center"><span class="badge badge-calc">Расчётное</span></td>
+                </tr>
+                <tr>
+                    <td><strong>5б. Ежедневная уборка и дезинфекция душа</strong></td>
+                    <td class="center">200,0 л / сут</td>
+                    <td>Мойка зала 40 м² и трапов после 120 чел.</td>
+                    <td class="num">0,200</td>
+                    <td class="num">0,400</td>
+                    <td class="center"><span class="badge badge-norm">СП 2.1.3678</span></td>
+                </tr>
+                <tr>
+                    <td><strong>6. Санобработка кухни и промывка ХВС</strong></td>
+                    <td class="center">250,0 л / сут</td>
+                    <td>Уборка кухни (150 л) + фильтры станции (100 л)</td>
+                    <td class="num">0,250</td>
+                    <td class="num">0,500</td>
+                    <td class="center"><span class="badge badge-calc">Расчётное</span></td>
+                </tr>
+                <tr class="row-total">
+                    <td><strong>ИТОГО ВОДОПОТРЕБЛЕНИЕ ГОРОДКА</strong></td>
+                    <td class="center"><strong>83,00 л/(чел.·сут)</strong></td>
+                    <td><strong>120 мужчин × 2 суток = 240 чел.-сут</strong></td>
+                    <td class="num"><strong>9,960</strong></td>
+                    <td class="num"><strong>19,920</strong></td>
+                    <td class="center"><strong>База на 48 ч</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="calc-norm-section">
+        <div class="calc-norm-title">📐 Расчётное обоснование, формулы и нормативные ссылки к Разделу 2</div>
+        <p><strong>1. Базовая формула расчёта расхода по каждому направлению:</strong></p>
+        <div class="formula-line">
+            Q<sub>i</sub> = q<sub>i</sub> × N<sub>i</sub> × n<sub>i</sub> × 10<sup>−3</sup>, м³ &nbsp;&nbsp;&rArr;&nbsp;&nbsp; Q<sub>48</sub> = &Sigma; Q<sub>i (сут)</sub> × 2 = 9,960 × 2 = 19,920 м³
+        </div>
+        <p><strong>2. Расчёт группового душа и теплового баланса ГВС/ХВС:</strong> При расходе экономичной душевой лейки <i>q</i><sub>сет</sub> = 7,0 л/мин и чистом времени подачи струи на 1 человека <i>t</i> = 5 мин (в рамках 15-минутной смены с намыливанием) удельный расход составляет <i>q</i><sub>душ</sub> = 35,0 л/чел. Доля горячей воды (<i>T</i><sub>г</sub> = 65 °C) при смешении с холодной водой (<i>T</i><sub>х</sub> = 15 °C) до температуры душевой смеси (<i>T</i><sub>см</sub> = 40 °C):</p>
+        <div class="formula-line">
+            &alpha;<sub>ГВС</sub> = (T<sub>см</sub> − T<sub>х</sub>) / (T<sub>г</sub> − T<sub>х</sub>) = (40 − 15) / (65 − 15) = 0,50 (50% ГВС и 50% ХВС) &nbsp;&rArr;&nbsp; Q<sub>ГВС.душ</sub> = 2,10 м³/сут
+        </div>
+        <div class="norm-ref">
+            <strong>Нормативные ссылки:</strong><br>
+            • <strong>СП 30.13330.2020 «Внутренний водопровод и канализация зданий» (с Изм. 1–4), Приложение А (Табл. А.1, А.2, п. 14):</strong> нормы расхода воды на душевые сетки в групповых установках и предприятия общественного питания (приготовление пищи и мойка посуды).<br>
+            • <strong>СанПиН 2.3/2.4.3590-20 «Санитарно-эпидемиологические требования к организации общественного питания населения» (п. 3.10–3.14):</strong> обязательность 3-секционных моечных ванн для многоразовой столовой посуды с температурой ополаскивания не ниже +65 °C.<br>
+            • <strong>СанПиН 1.2.3685-21 (Раздел III):</strong> гигиенические нормативы качества питьевой и горячей воды.
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ 3: ВОДООТВЕДЕНИЕ И ВОДНЫЙ БАЛАНС -->
+    <h2>Раздел 3. Расчёт объёма стоков и Сводный водный баланс (48 часов)</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Источник образования стоков</th>
+                    <th style="width: 14%;" class="num">Подача воды (48 ч), м³</th>
+                    <th style="width: 14%;" class="center">Коэффициент возврата (K<sub>в</sub>)</th>
+                    <th style="width: 13%;" class="num">Стоки/сут, м³</th>
+                    <th style="width: 13%;" class="num">Стоки/48 ч, м³</th>
+                    <th style="width: 16%;">Категория стока</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Питьевой режим (лето)</strong></td>
+                    <td class="num">0,840</td>
+                    <td class="center">0% (0,00)</td>
+                    <td class="num">0,000</td>
+                    <td class="num">0,000</td>
+                    <td>Поглощается людьми</td>
+                </tr>
+                <tr>
+                    <td><strong>2а. Кухня: вода в составе блюд</strong></td>
+                    <td class="num">1,092</td>
+                    <td class="center">10% (0,10)</td>
+                    <td class="num">0,055</td>
+                    <td class="num">0,109</td>
+                    <td>Кухонный (слив остатков)</td>
+                </tr>
+                <tr>
+                    <td><strong>2б. Кухня: мытьё продуктов</strong></td>
+                    <td class="num">1,248</td>
+                    <td class="center">95% (0,95)</td>
+                    <td class="num">0,593</td>
+                    <td class="num">1,186</td>
+                    <td>Кухонный с взвесями</td>
+                </tr>
+                <tr>
+                    <td><strong>3а, 3б. Кухня: мойка посуды и котлов</strong></td>
+                    <td class="num">5,760</td>
+                    <td class="center">98% (0,98)</td>
+                    <td class="num">2,822</td>
+                    <td class="num">5,645</td>
+                    <td><strong>Жиросодержащий сток</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>4. Полевой умывальник (24 крана)</strong></td>
+                    <td class="num">1,680</td>
+                    <td class="center">96% (0,96)</td>
+                    <td class="num">0,806</td>
+                    <td class="num">1,613</td>
+                    <td>Серый мыльный сток</td>
+                </tr>
+                <tr>
+                    <td><strong>5а, 5б. Групповой душ и уборка (12 сеток)</strong></td>
+                    <td class="num">8,800</td>
+                    <td class="center">96,5% (ср.)</td>
+                    <td class="num">4,246</td>
+                    <td class="num">8,492</td>
+                    <td>Серый душевой сток</td>
+                </tr>
+                <tr>
+                    <td><strong>6. Санобработка кухни и промывка ХВС</strong></td>
+                    <td class="num">0,500</td>
+                    <td class="center">90% (0,90)</td>
+                    <td class="num">0,225</td>
+                    <td class="num">0,450</td>
+                    <td>Хозяйственный сток</td>
+                </tr>
+                <tr class="row-subtotal">
+                    <td><strong>ТЕОРЕТИЧЕСКИЙ ОБЪЁМ СТОКОВ (W<sub>ст.теор</sub>)*</strong></td>
+                    <td class="num"><strong>19,920</strong></td>
+                    <td class="center"><strong>91,8% от ХВС</strong></td>
+                    <td class="num"><strong>9,147*</strong></td>
+                    <td class="num"><strong>18,295*</strong></td>
+                    <td>*С учётом влаги сырья</td>
+                </tr>
+                <tr class="row-total">
+                    <td><strong>РАСЧЁТНЫЙ ОБЪЁМ СТОКОВ С K=1,10 (W<sub>ст.расч</sub>)</strong></td>
+                    <td class="num">—</td>
+                    <td class="center"><strong>Запас +10%</strong></td>
+                    <td class="num"><strong>10,062</strong></td>
+                    <td class="num"><strong>20,124</strong></td>
+                    <td><strong>Принято: 20,12 м³ / 48 ч</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="calc-norm-section">
+        <div class="calc-norm-title">📐 Расчётное обоснование, формулы и нормативные ссылки к Разделу 3</div>
+        <p><strong>1. Уравнение водного баланса и расчётного объёма стоков:</strong></p>
+        <div class="formula-line">
+            W<sub>ст.теор</sub> = &Sigma; (Q<sub>i</sub> × K<sub>в,i</sub>) + W<sub>сырья</sub> = 17,495 + 0,800 = 18,295 м³; &nbsp;&nbsp; W<sub>ст.расч</sub> = W<sub>ст.теор</sub> × K<sub>непр</sub> = 18,295 × 1,10 = 20,12 м³
+        </div>
+        <p><strong>2. Комментарий по расхождению подачи воды (19,92 м³) и стоков (18,29 м³):</strong> Безвозвратные потери составляют <strong>1,63 м³ за 48 ч (8,2%)</strong> и складываются из воды, выпитой людьми (0,84 м³), воды, вошедшей в состав пищи и выкипевшей из котлов КП-130 (0,98 м³), а также парообразования в душевой и испарения с полов (0,61 м³) за вычетом свободной влаги, выделившейся при кулинарной обработке продуктов и промывке фильтров (+0,80 м³).</p>
+        <div class="norm-ref">
+            <strong>Нормативные ссылки:</strong><br>
+            • <strong>СП 30.13330.2020 (п. 19.3, п. 21.3.2):</strong> при мойке многоразовой посуды на 1560 блюд/сут образуется 5,65 м³ жирных стоков за 48 ч (39,5 м³ за 14 суток). Для защиты наружной трубы ∅ 110 мм от жировой закупорки обязательна установка <strong>подмоечного цехового жироуловителя производительностью 1,0–1,5 л/с (объём 80–100 л)</strong>.<br>
+            • <strong>СанПиН 2.1.3684-21 (п. 22, 23, Раздел VI.1) и Постановление Правительства РФ № 644:</strong> сбор стоков в водонепроницаемые ёмкости и вывоз ассенизационным транспортом по договору на сливную станцию водоканала (код ФККО 7 32 100 01 30 4).
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ 4: ЕМКОСТНОЙ ПАРК -->
+    <h2>Раздел 4. Подбор единого накопителя чистой воды и ёмкости стоков (48 ч)</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 38%;">Параметр резервуарного парка и логистики</th>
+                    <th style="width: 28%;" class="center">Единый накопитель ХВС<br><small>(в павильоне 12×7 м)</small></th>
+                    <th style="width: 34%;" class="center">Накопительная ёмкость стоков ЖБО<br><small>(наружная/обвалованная)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Расчётный двухсуточный поток (48 часов)</strong></td>
+                    <td class="center">Q<sub>48</sub> = <strong>19,92 м³</strong></td>
+                    <td class="center">W<sub>ст.теор</sub> = <strong>18,29 м³</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Учёт резерва (+20% ХВС) / запаса (+10% ЖБО)</strong></td>
+                    <td class="center">W<sub>пол</sub> = 19,92 × 1,20 = <strong>23,90 м³</strong></td>
+                    <td class="center">W<sub>ст.расч</sub> = 18,29 × 1,10 = <strong>20,12 м³</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Коэффициент полезного использования объёма (&eta;)</strong></td>
+                    <td class="center"><strong>&eta; = 0,81</strong> (12% донный остаток + 7% верх)</td>
+                    <td class="center"><strong>&eta; = 0,80–0,85</strong> (до лотка трубы ∅ 110 мм)</td>
+                </tr>
+                <tr class="row-total">
+                    <td><strong>РЕКОМЕНДУЕМЫЙ НОМИНАЛЬНЫЙ ОБЪЁМ ЁМКОСТИ</strong></td>
+                    <td class="center"><strong>30,0 м³ (единый резервуар)</strong></td>
+                    <td class="center"><strong>25,0 м³ (герметичный накопитель)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Габариты резервуара и размещение</strong></td>
+                    <td class="center">Горизонтальный цилиндр: ∅ 2,4 м, L = 6,8 м (занимает 18 м² из 84 м² павильона)</td>
+                    <td class="center">Горизонтальный цилиндр: ∅ 2,4 м, L = 5,6 м (установка ниже отметки пола душа)</td>
+                </tr>
+                <tr>
+                    <td><strong>График спецтранспорта (раз в 48 часов)</strong></td>
+                    <td class="center"><strong>5 рейсов</strong> водовоза АЦПТ-5,0 (или <strong>3 рейса</strong> АЦ-10) каждые 48 часов</td>
+                    <td class="center"><strong>2 рейса</strong> ассенизатора КАМАЗ (10 м³) каждые 48 ч (или по 1 рейсу в сутки)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="calc-norm-section">
+        <div class="calc-norm-title">📐 Расчётное обоснование, формулы и нормативные ссылки к Разделу 4</div>
+        <p><strong>Формулы определения геометрического (номинального) объёма единого накопителя ХВС и бака стоков:</strong></p>
+        <div class="formula-line">
+            W<sub>ном.ХВС</sub> = [Q<sub>48</sub> × (1 + k<sub>рез</sub>)] / &eta;<sub>ХВС</sub> = (19,92 × 1,20) / 0,81 = 23,904 / 0,81 = 29,51 м³ &rArr; Принимаем 30,0 м³
+        </div>
+        <div class="formula-line">
+            W<sub>ном.ЖБО</sub> = (W<sub>ст.теор</sub> × K<sub>непр</sub>) / &eta;<sub>ЖБО</sub> = 20,124 / 0,805 = 25,00 м³ &rArr; Принимаем 25,0 м³ (порог отсечки 85% = 21,25 м³)
+        </div>
+        <div class="norm-ref">
+            <strong>Нормативные ссылки:</strong><br>
+            • <strong>СП 31.13330.2021 «Водоснабжение. Наружные сети и сооружения» (Раздел 12, п. 12.28):</strong> устройство резервуаров чистой воды, дыхательных клапанов с фильтрами, люков-лазов и обеспечение полной сменяемости воды за 48 часов.<br>
+            • <strong>СанПиН 2.1.3684-21 (п. 75, 82) и СП 73.13330.2016 (п. 7.4):</strong> обязательная предпусковая и периодическая промывка и дезинфекция единого накопителя раствором активного хлора; поддержание в летнюю жару остаточного свободного хлора 0,3–0,5 мг/л.
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ 5: НАСОСНАЯ СТАНЦИЯ И КОТЕЛЬНАЯ ДУША -->
+    <h2>Раздел 5. Расчёт мощности насосной станции (12×7 м) и нагрева воды</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 38%;">Расчётный параметр станции и теплогенератора</th>
+                    <th style="width: 24%;" class="center">Расчётное значение</th>
+                    <th style="width: 38%;">Принятое техническое решение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Пиковый секундный расход воды (q<sub>пик</sub>)</strong></td>
+                    <td class="center"><strong>2,78 л/с</strong></td>
+                    <td>Одновременная работа: 12 сеток душа (1,44 л/с) + 12 кранов умывальника (0,84 л/с) + 2 крана кухни (0,50 л/с)</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Максимальная часовая подача насоса (Q<sub>макс.ч</sub>)</strong></td>
+                    <td class="center"><strong>10,0 м³/ч</strong></td>
+                    <td>Сдвоенная станция (1 рабочий + 1 резервный 100%) с ЧРП</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Требуемый напор насосной станции (H<sub>тр</sub>)</strong></td>
+                    <td class="center"><strong>32,0 м вод. ст. (3,2 бар)</strong></td>
+                    <td>Геометрия 3,5 м + потери в ПНД ∅ 63 мм и фильтрах 8,5 м + свободный напор у смесителей 20,0 м</td>
+                </tr>
+                <tr class="row-total">
+                    <td><strong>4. Мощность электродвигателя насосной станции</strong></td>
+                    <td class="center"><strong>2,2 кВт (рабочий)</strong></td>
+                    <td>Установленная мощность 2×2,2 кВт (380 В) + мембранный гидроаккумулятор <strong>300–500 л</strong> + УФ-стерилизатор (1,5 кВт)</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Тепловая мощность водонагревателя душа (12×7 м)</strong></td>
+                    <td class="center"><strong>48,8 кВт (расч.)</strong></td>
+                    <td>Дизельный или твердотопливный водогрейный котёл <strong>50 кВт</strong> с баком-аккумулятором ГВС на <strong>1000 л</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="calc-norm-section">
+        <div class="calc-norm-title">📐 Расчётное обоснование, формулы и нормативные ссылки к Разделу 5</div>
+        <p><strong>1. Формула расчёта напора и электрической мощности насосного агрегата:</strong></p>
+        <div class="formula-line">
+            H<sub>тр</sub> = H<sub>геом</sub> + i·L·k<sub>м</sub> + &Delta;h<sub>ф</sub> + H<sub>св</sub> = 3,5 + (0,028 × 100 × 1,3) + 4,8 + 20,0 = 31,94 м &rArr; 32,0 м вод. ст.
+        </div>
+        <div class="formula-line">
+            P<sub>эл</sub> = (&rho; · g · Q · H) / (3600 · 1000 · &eta;<sub>нас</sub> · &eta;<sub>дв</sub>) = (1000 × 9,81 × 10,0 × 32) / (3 600 000 × 0,65 × 0,85) = 1,58 кВт &rArr; Двигатель 2,2 кВт
+        </div>
+        <p><strong>2. Формула тепловой мощности котла группового душа:</strong> Нагрев 2,10 м³ горячей воды от <i>T</i><sub>х</sub> = 15 °C до <i>T</i><sub>г</sub> = 65 °C (&Delta;<i>T</i> = 50 °C) за время работы душа <i>t</i> = 2,5 часа (по 840 л/ч ГВС):</p>
+        <div class="formula-line">
+            P<sub>тепл</sub> = (G<sub>ГВС.ч</sub> × c<sub>p</sub> × &Delta;T) / 3600 = (840 кг/ч × 4,187 кДж/(кг·°C) × 50 °C) / 3600 = 48,85 кВт &rArr; Котёл 50 кВт
+        </div>
+        <div class="norm-ref">
+            <strong>Нормативные ссылки:</strong><br>
+            • <strong>СП 30.13330.2020 (Раздел 5, Раздел 12):</strong> расчёт секундных и часовых расходов воды, подбор насосных установок с 100% резервированием, защита от сухого хода и обратного тока воды (обратные клапаны, воздушный разрыв струи при заправке бака).<br>
+            • <strong>Правила противопожарного режима в РФ (Постановление Правительства РФ № 1479, п. 391–399) и СП 8.13130.2020 (п. 5.2, 5.11):</strong> оборудование единого резервуара 30 м³ нижним краном с пожарной соединительной головкой <strong>ГМ-50 / ГМ-70</strong> и размещение в павильоне 12×7 м переносной пожарной мотопомпы (600–800 л/мин).
         </div>
     </div>
 
     <div class="footer-sign">
         <div>Разработал: Инженер-проектировщик систем ВК, специалист по СЭБ и ПБ</div>
-        <div>Объект: 120 мужчин | Московская область | Лето | Сменная баня | Единый бак 20 м³ | Без туалета</div>
-        <div>Версия документа: v3 (2026 г.)</div>
+        <div>Объект: 120 мужчин | МО | Лето | Ежедневный душ | Единый бак 30 м³</div>
+        <div>Версия документа: v5 (2026 г.)</div>
     </div>
+
+</div>
 
 </body>
 </html>
